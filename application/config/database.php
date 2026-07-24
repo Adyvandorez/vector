@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'   => '',
-	'hostname' => getenv('DB_HOST') ?: 'localhost',
-	'port'     => getenv('DB_PORT') ?: '3308',
-	'username' => getenv('DB_USERNAME') ?: 'root',
-	'password' => getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : 'root',
-	'database' => getenv('DB_DATABASE') ?: 'vector_invoice',
+	'hostname' => getenv('MYSQLHOST') ?: 'localhost',
+	'port' 	   => getenv('MYSQLPORT') ?: '3308',
+	'username' => getenv('MYSQLUSER') ?: 'root',
+	'password' => getenv('MYSQLPASSWORD') ?: 'root',
+	'database' => getenv('MYSQL_DATABASE') ?: 'vector_invoice',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

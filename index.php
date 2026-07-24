@@ -67,9 +67,14 @@
  */
 switch (ENVIRONMENT)
 {
-	case 'development':
-		error_reporting(-1);
-		ini_set('display_errors', 1);
+	// case 'development':
+	// 	error_reporting(-1);
+	// 	ini_set('display_errors', 1);
+	// break;
+
+    case 'development':
+	    error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR);
+	    ini_set('display_errors', 1);
 	break;
 
 	case 'testing':
