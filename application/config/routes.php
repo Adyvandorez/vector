@@ -21,12 +21,12 @@ $route['reset-password/(:any)'] = 'auth/reset_password/$1';
 
 
 // Konten aplikasi Android (banner, promosi, portofolio, dan pengaturan publik)
-$route['app-content'] = 'mobilecontent/index';
-$route['app-content/settings']['post'] = 'mobilecontent/save_settings';
-$route['app-content/banner/save/(:num)']['post'] = 'mobilecontent/save_banner/$1';
-$route['app-content/promotion/save/(:num)']['post'] = 'mobilecontent/save_promotion/$1';
-$route['app-content/portfolio/save/(:num)']['post'] = 'mobilecontent/save_portfolio/$1';
-$route['app-content/delete/(:any)/(:num)']['post'] = 'mobilecontent/delete/$1/$2';
+$route['app-content'] = 'MobileContent/index';
+$route['app-content/settings']['post'] = 'MobileContent/save_settings';
+$route['app-content/banner/save/(:num)']['post'] = 'MobileContent/save_banner/$1';
+$route['app-content/promotion/save/(:num)']['post'] = 'MobileContent/save_promotion/$1';
+$route['app-content/portfolio/save/(:num)']['post'] = 'MobileContent/save_portfolio/$1';
+$route['app-content/delete/(:any)/(:num)']['post'] = 'MobileContent/delete/$1/$2';
 
 // Pelanggan
 $route['clients'] = 'clients/index';
