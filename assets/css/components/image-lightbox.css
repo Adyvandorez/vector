@@ -1,0 +1,75 @@
+
+/* ADY VANDOREZ PREMIUM FULLSCREEN PREVIEW VIEWER */
+.vi-image-trigger{display:inline-flex;position:relative;cursor:zoom-in;border-radius:16px;overflow:hidden;outline:none}
+.vi-image-trigger img{display:block;object-fit:cover}
+.vi-image-trigger::after{content:'Lihat Preview';position:absolute;right:10px;bottom:10px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.75);border:1px solid rgba(202,162,74,.55);color:#f4d38a;font-size:11px;font-weight:800;opacity:0;transition:.25s}
+.vi-image-trigger:hover::after{opacity:1}
+
+.vi-lightbox{
+ position:fixed;inset:0;z-index:99999;
+ display:none;align-items:center;justify-content:center;
+ padding:28px;background:rgba(0,0,0,.88);
+ backdrop-filter:blur(18px)
+}
+.vi-lightbox.is-open{display:flex}
+.vi-lightbox__dialog{
+ position:relative;
+ width:min(1500px,94vw);
+ height:min(850px,88vh);
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ animation:viZoom .25s ease;
+}
+@keyframes viZoom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+
+.vi-lightbox__stage{
+ width:100%;
+ height:calc(100% - 70px);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:linear-gradient(145deg,#111,#050505);
+ border:1px solid rgba(202,162,74,.35);
+ border-radius:26px;
+ overflow:hidden;
+ box-shadow:0 30px 90px rgba(0,0,0,.7)
+}
+.vi-lightbox__image{
+ max-width:100%;
+ max-height:100%;
+ object-fit:contain;
+}
+.vi-lightbox__caption{
+ margin-top:18px;
+ color:#f2f2f2;
+ font-size:16px;
+ font-weight:700;
+ text-align:center
+}
+.vi-lightbox__close{
+ position:absolute;
+ right:-18px;
+ top:-18px;
+ width:52px;
+ height:52px;
+ border-radius:50%;
+ border:0;
+ background:#d30016;
+ color:white;
+ font-size:32px;
+ line-height:1;
+ cursor:pointer;
+ box-shadow:0 10px 30px rgba(0,0,0,.5)
+}
+.vi-lightbox__loading{
+ position:absolute;
+ color:#f4d38a;
+ font-weight:700
+}
+.vi-lightbox__dialog img[src=""]{display:none}
+@media(max-width:700px){
+ .vi-lightbox__dialog{width:96vw;height:80vh}
+ .vi-lightbox__close{right:0;top:-15px}
+}

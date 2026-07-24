@@ -1,0 +1,209 @@
+/* ===============================
+   AI INPUT MODE CONTAINER
+================================ */
+.ai-input-mode {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeInInput 0.25s ease;
+}
+
+/* CARD BLOCK */
+.ai-input-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 140, 0, 0.25);
+    border-radius: 22px;
+    padding: 20px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.05);
+}
+
+.ai-input-card h3 {
+    color: #ff9d4d;
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 0 0 16px;
+}
+
+/* FORM GRID */
+.ai-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.ai-input-grid.full {
+    grid-template-columns: 1fr;
+}
+
+/* LABEL */
+.ai-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffb366;
+    margin-bottom: 6px;
+}
+
+/* INPUT */
+.ai-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-field input,
+.ai-field select,
+.ai-field textarea {
+    width: 100%;
+    min-height: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 140, 0, 0.35);
+    border-radius: 14px;
+    padding: 10px 12px;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.ai-field input::placeholder,
+.ai-field textarea::placeholder {
+    color: rgba(255, 255, 255, .52);
+}
+
+.ai-field input:focus,
+.ai-field select:focus,
+.ai-field textarea:focus {
+    border-color: rgba(255, 176, 102, .95);
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, .12);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.ai-field input[type="file"] {
+    padding: 8px 10px;
+}
+
+.ai-field input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #1a140d;
+    background: linear-gradient(145deg, #ffcf8b, #ffb153);
+}
+
+.ai-field select option {
+    color: #1f1a16;
+}
+
+/* BUTTON */
+.ai-input-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.ai-next-btn,
+.ai-cancel-btn {
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.ai-next-btn {
+    background: linear-gradient(145deg, #ff7a00, #ff3c00);
+    border: none;
+    color: #1a1106;
+    box-shadow: 0 0 10px rgba(255, 120, 0, 0.45);
+}
+
+.ai-next-btn:hover,
+.ai-cancel-btn:hover {
+    transform: translateY(-1px);
+}
+
+.ai-cancel-btn {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f4efe8;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+}
+
+.ai-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* LIGHT MODE */
+html.vi-light-mode .ai-input-card {
+    background: #f7f3ef;
+    border-color: #efd6b3;
+    box-shadow: 0 12px 32px rgba(112, 94, 73, .08);
+}
+
+html.vi-light-mode .ai-input-card h3 {
+    color: #3a2c21;
+}
+
+html.vi-light-mode .ai-label {
+    color: #de8b21;
+}
+
+html.vi-light-mode .ai-field input,
+html.vi-light-mode .ai-field select,
+html.vi-light-mode .ai-field textarea {
+    background: #fffdf9;
+    border-color: #efd6b3;
+    color: #2c2926 !important;
+    box-shadow: none;
+}
+
+html.vi-light-mode .ai-field input::placeholder,
+html.vi-light-mode .ai-field textarea::placeholder {
+    color: #8f877f;
+}
+
+html.vi-light-mode .ai-field input:focus,
+html.vi-light-mode .ai-field select:focus,
+html.vi-light-mode .ai-field textarea:focus {
+    border-color: #f2aa47;
+    box-shadow: 0 0 0 3px rgba(242, 170, 71, .14);
+    background: #ffffff;
+}
+
+html.vi-light-mode .ai-field input[type="file"]::file-selector-button {
+    color: #302516;
+    background: linear-gradient(145deg, #ffcc7f, #ff9d30);
+}
+
+html.vi-light-mode .ai-cancel-btn {
+    background: #ffffff;
+    color: #4f4740;
+    border-color: #d4c8bd;
+}
+
+html.vi-light-mode .ai-cancel-btn:hover {
+    background: #f6f2ee;
+}
+
+@keyframes fadeInInput {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

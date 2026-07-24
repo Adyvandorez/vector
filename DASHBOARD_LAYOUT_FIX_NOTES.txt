@@ -1,0 +1,30 @@
+DASHBOARD LAYOUT FIX NOTES
+==========================
+
+Perbaikan ini khusus merapikan layout dashboard mengikuti referensi user tanpa mengganti warna/desain utama.
+
+Yang diubah:
+1. Stats utama di panel kiri hanya berisi 6 card:
+   - Seluruh Paid
+   - Paid Tahun Ini
+   - Paid Bulan Ini
+   - Total Order (Semua)
+   - Total Order Tahun Ini
+   - Total Order Bulan Ini
+2. Panel kanan berisi:
+   - Statistik Order Harian
+   - 3 card Belum Lunas dalam satu baris di bawah grafik
+3. Section bawah dibuat 2 kolom seimbang:
+   - History Order Terbaru
+   - Quick Actions
+4. CSS cache version dinaikkan ke v=20260618dashfix1.
+5. Tidak ada perubahan warna brand, style dark/light, database, query, atau fitur lain.
+
+File utama yang berubah:
+- application/views/dashboard.php
+- assets/css/dashboard.css
+- assets/css/dashboard-mobile.css
+- application/views/layout/header.php
+- application/views/layout/footer.php
+
+PHP syntax sudah dicek: aman.

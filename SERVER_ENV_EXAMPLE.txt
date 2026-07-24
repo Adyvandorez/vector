@@ -1,0 +1,15 @@
+Contoh environment variables untuk Apache/hosting:
+
+CI_ENV=production
+APP_KEY=ganti-dengan-random-string-yang-panjang
+DB_HOST=localhost
+DB_PORT=3308
+DB_USERNAME=root
+DB_PASSWORD=root
+DB_DATABASE=vector_invoice
+VI_APP_NAME=Vector Invoice
+VI_BRAND_NAME=Ady_vandorez
+VI_BRAND_TAGLINE=Vector Order Manager
+VI_OWNER_NAME=Muhammad Adi Mulyono
+VI_OWNER_EMAIL=muhammadadimulyono@gmail.com
+VI_TIMEZONE=Asia/Jakarta

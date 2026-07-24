@@ -1,0 +1,28 @@
+/* =========================================================
+   ORDER FORM PAGE
+   ---------------------------------------------------------
+   Style khusus form tambah/edit order dan item desain.
+========================================================= */
+
+.order-items-card {
+    padding: 14px;
+    margin-top: 12px;
+}
+
+.order-items-wrap {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-item-card {
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.order-item-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

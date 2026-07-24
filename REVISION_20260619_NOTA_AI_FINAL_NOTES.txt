@@ -1,0 +1,24 @@
+REVISION 20260619 - NOTA + AI ASSISTANT
+
+1. Nota / invoice
+- Tombol Print Nota di Detail Order tidak membuka tab baru lagi.
+- Preview nota dibuka di tab yang sama.
+- Halaman preview nota memiliki tombol:
+  - Print Nota
+  - Download PDF (melalui dialog print browser / Save as PDF)
+  - Download PNG
+  - Download JPG
+  - Kembali ke Detail Order
+- Script auto-print lama dihapus agar halaman tidak langsung membuka dialog print.
+
+2. AI Assistant
+- Tombol tutup (X) dibuat merah full.
+- Mobile hanya menampilkan 3 rekomendasi chat di atas input:
+  - Ringkasan bulan ini
+  - Order belum lunas
+  - Cek order macet
+- Prediksi income bulan ini dan Buat pesan follow-up disembunyikan khusus mobile.
+- Saat AI dibuka, kolom input otomatis fokus sehingga admin bisa langsung mengetik.
+
+3. Cache
+- Version CSS/JS dinaikkan ke 20260619rev6.

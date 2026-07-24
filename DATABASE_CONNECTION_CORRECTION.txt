@@ -1,0 +1,12 @@
+VECTOR INVOICE - KOREKSI KONEKSI DATABASE
+
+Konfigurasi dikembalikan mengikuti project asli dan file referensi pengguna:
+- Host: localhost
+- Port: 3308
+- Username: root
+- Password MySQL: root
+- Database: vector_invoice
+
+Catatan:
+Password MySQL di atas berbeda dengan password login admin website.
+Tidak ada data, tabel, controller, model, view, atau fitur web yang dihapus pada koreksi ini.

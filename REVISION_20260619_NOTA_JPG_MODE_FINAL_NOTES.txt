@@ -1,0 +1,27 @@
+REVISION 2026-06-19 - NOTA JPG & MODE FINAL
+
+1. Halaman Preview Nota
+- Tombol Print Nota dihapus.
+- Tombol Download PNG dihapus.
+- Tombol Download JPG dipertahankan dan diarahkan ke endpoint server-side agar download lebih stabil.
+- Tombol Download PDF tetap ada memakai dialog print browser / Save as PDF.
+- Tombol Kembali tetap ada di desktop, disembunyikan khusus mobile.
+
+2. Download JPG
+- Endpoint baru: invoices/download_jpg/{order_id}
+- Route baru: invoices/download_jpg/(:num)
+- Nama file otomatis mengikuti format: Nota-{nama klien}-{judul pekerjaan}.jpg
+- Contoh: Nota-Firman-art.jpg
+
+3. Mode Gelap / Terang
+- Halaman nota sekarang membaca localStorage vi_theme_mode / vi_theme seperti halaman lain.
+- Light mode dan dark mode aktif di halaman nota.
+- Ada tombol mode di toolbar nota untuk ganti mode langsung.
+
+4. Mobile
+- Mobile hanya menampilkan aksi penting: Download PDF, Download JPG, dan tombol mode.
+- Tombol Kembali, PNG, dan Print Nota tidak tampil di mobile.
+
+5. Desain
+- Preview nota dipoles ulang agar lebih rapi dan profesional.
+- Tetap menggunakan identitas dark premium hitam/emas, dan light mode menyesuaikan warna terang.

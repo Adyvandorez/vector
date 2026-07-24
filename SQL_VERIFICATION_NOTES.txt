@@ -1,0 +1,14 @@
+SQL VERIFY - UI POLISH PRO
+
+File SQL dari user sudah dicek terhadap struktur aplikasi UI Polish Pro.
+Hasil penting:
+- Tabel utama tersedia: users, clients, body_parts, design_types, price_matrix, orders, order_items, order_files, order_payments, order_revisions, invoices, ai_logs, ai_audit_logs, drive_oauth_tokens.
+- Kolom Drive storage tersedia: preview_thumb, preview_storage, preview_drive_id, preview_drive_url, source_drive_id, source_drive_url, thumb_path, storage, drive_file_id, drive_url.
+- Kolom pembayaran bertahap tersedia: order_payments.amount, payment_date, source dan orders.paid sebagai cache total paid.
+- Dashboard 9 card kompatibel dengan tabel orders dan order_items.
+- History Order Terbaru di dashboard sudah disamakan dengan urutan deadline/tanggal input, bukan hanya ID terakhir.
+
+File SQL user juga disalin ke:
+- database/vector_invoice.sql
+
+Gunakan SQL ini untuk import database baru, atau gunakan patch database yang sudah tersedia jika database hosting sudah berjalan.

@@ -1,0 +1,14 @@
+HOTFIX DASHBOARD ALIAS ORDER BY
+
+Masalah:
+- Dashboard error: Unknown column 'orders.deadline' in 'order clause'.
+- Penyebab: query latest orders memakai alias tabel `orders o`, tetapi ORDER BY masih memakai ekspresi dari alias default `orders.deadline`.
+
+Perbaikan:
+- application/controllers/Dashboard.php
+- Pada query Latest Orders, ekspresi tanggal diganti menjadi dashboard_date_sql('o').
+- ORDER BY sekarang memakai o.deadline / o.created_at secara benar.
+
+Catatan:
+- Tidak ada perubahan desain, warna, layout, atau struktur database.
+- Ini hanya hotfix backend query agar dashboard bisa dibuka.

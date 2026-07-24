@@ -1,0 +1,652 @@
+/* =========================================================
+   VECTOR INVOICE — LIGHT MODE OVERRIDE v2
+   ---------------------------------------------------------
+   Aktif HANYA saat html.vi-light-mode.
+   Dark mode existing tidak disentuh.
+   Palet: soft white / warm beige sesuai referensi user.
+========================================================= */
+
+html.vi-light-mode {
+    --bg: #fbfaf8;
+    --panel: #ffffff;
+    --panel2: #f4f0ec;
+    --gold: #f0b33f;
+    --muted: #6f6a64;
+    --red: #ee1427;
+    --border: #d7cbbf;
+    --text: #2b2927;
+    --sidebar-w: 260px;
+    --purple: #b9a891;
+    --pink: #e8ded4;
+    --light-sidebar: #f2eee9;
+    --light-menu: #e7e2dc;
+    --light-menu-active: #b6a38d;
+    --light-row: #f2eeeb;
+    --light-row-border: #d4c8bd;
+    --light-input: #f5f2ee;
+    --light-soft-border: rgba(94, 78, 62, .22);
+    --glow: 0 12px 26px rgba(112, 94, 73, .12);
+    --glow2: 0 10px 24px rgba(240, 179, 63, .15);
+}
+
+html.vi-light-mode,
+html.vi-light-mode body {
+    color-scheme: light;
+}
+
+html.vi-light-mode body {
+    background: #fbfaf8 !important;
+    color: var(--text) !important;
+}
+
+html.vi-light-mode .container.app {
+    background: #fbfaf8 !important;
+}
+
+/* =========================
+   Global typography
+========================= */
+html.vi-light-mode h1,
+html.vi-light-mode h2,
+html.vi-light-mode h3,
+html.vi-light-mode h4,
+html.vi-light-mode b,
+html.vi-light-mode strong,
+html.vi-light-mode .name,
+html.vi-light-mode .stat-label,
+html.vi-light-mode .stat-value,
+html.vi-light-mode .drive-stat-value,
+html.vi-light-mode .order-main-value,
+html.vi-light-mode .dm-title,
+html.vi-light-mode .pm-title,
+html.vi-light-mode .om-client,
+html.vi-light-mode .om-value,
+html.vi-light-mode .t1,
+html.vi-light-mode .brandname,
+html.vi-light-mode .qa-title,
+html.vi-light-mode .page-title {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .small,
+html.vi-light-mode .muted,
+html.vi-light-mode .sub,
+html.vi-light-mode .role,
+html.vi-light-mode .meta,
+html.vi-light-mode .desc,
+html.vi-light-mode .drive-stat-label,
+html.vi-light-mode .drive-stat-note,
+html.vi-light-mode .om-label,
+html.vi-light-mode .sb__brandSub,
+html.vi-light-mode .sb__userSub,
+html.vi-light-mode .stat-foot,
+html.vi-light-mode .invoice-muted-top,
+html.vi-light-mode .vi-storage-note,
+html.vi-light-mode .t2,
+html.vi-light-mode .drive-intro,
+html.vi-light-mode .drive-action-note,
+html.vi-light-mode .drive-guide-item .small {
+    color: #706b65 !important;
+}
+
+html.vi-light-mode a:not(.btn):not(.btn-red):not(.sb__item):not(.sb__logout):not(.om-detail):not(.dm-btn):not(.pm-action) {
+    color: inherit;
+}
+
+/* =========================
+   Card / main surface
+========================= */
+html.vi-light-mode .card,
+html.vi-light-mode .dash-panel,
+html.vi-light-mode .latest-orders,
+html.vi-light-mode .quick-actions,
+html.vi-light-mode .auth-card,
+html.vi-light-mode .order-items-wrap,
+html.vi-light-mode .order-item-table,
+html.vi-light-mode .paper {
+    background: #fbfaf8 !important;
+    border-color: #d7cbbf !important;
+    box-shadow: none !important;
+    color: var(--text) !important;
+}
+
+html.vi-light-mode .card-header,
+html.vi-light-mode hr.sep {
+    border-color: #d7cbbf !important;
+}
+
+html.vi-light-mode .card-body,
+html.vi-light-mode .drive-page-body {
+    color: var(--text) !important;
+}
+
+html.vi-light-mode .stat-card,
+html.vi-light-mode .trend-box,
+html.vi-light-mode .qa-card,
+html.vi-light-mode .order-info-card,
+html.vi-light-mode .order-mini-card,
+html.vi-light-mode .preview-card,
+html.vi-light-mode .revision-card,
+html.vi-light-mode .drive-stat-card,
+html.vi-light-mode .drive-action-card,
+html.vi-light-mode .drive-guide-card,
+html.vi-light-mode .drive-security-card,
+html.vi-light-mode .drive-errors-card,
+html.vi-light-mode .drive-guide-item,
+html.vi-light-mode .drive-stage-card,
+html.vi-light-mode .login-card,
+html.vi-light-mode .admin-account,
+html.vi-light-mode .auth-panel,
+html.vi-light-mode .visual-card,
+html.vi-light-mode .brand-mini {
+    background: #f2eeeb !important;
+    border-color: #d4c8bd !important;
+    box-shadow: none !important;
+    color: var(--text) !important;
+}
+
+/* =========================
+   Sidebar — layout seperti referensi
+========================= */
+html.vi-light-mode .sidebar.sb {
+    background: #f2eee9 !important;
+    border-right: 1px solid #cdbfaf !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .sb__top {
+    border-bottom-color: #cfc3b7 !important;
+}
+
+html.vi-light-mode .sb__brand,
+html.vi-light-mode .sb__user {
+    background: #f8f6f2 !important;
+    border-color: #bda995 !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .sb__logo,
+html.vi-light-mode .sb__avatar,
+html.vi-light-mode .sb__icon {
+    background: #e4d7c7 !important;
+    border-color: #c9b79f !important;
+    color: #2e2b27 !important;
+}
+
+html.vi-light-mode .sb__brandName,
+html.vi-light-mode .sb__userName,
+html.vi-light-mode .sb__label {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .sb__item {
+    color: #2b2927 !important;
+    background: #e7e2dc !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .sb__item:hover {
+    background: #d8cbbd !important;
+    border-color: rgba(171, 143, 112, .45) !important;
+    transform: translateX(2px);
+}
+
+html.vi-light-mode .sb__item.active {
+    background: linear-gradient(180deg, #bba991 0%, #a98f72 100%) !important;
+    border-color: #9d8264 !important;
+    color: #2b2927 !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .20) !important;
+}
+
+html.vi-light-mode .sb__item.active .sb__icon {
+    background: rgba(84, 69, 52, .16) !important;
+    border-color: rgba(84, 69, 52, .24) !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .sb__aiMenu {
+    background: #ffffff !important;
+    border-color: #ff941e !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .sb__aiIcon {
+    background: linear-gradient(145deg, #ff8a00, #ff5400) !important;
+    color: #fff !important;
+    box-shadow: 0 0 12px rgba(255, 120, 0, .24) !important;
+}
+
+html.vi-light-mode .sb__aiText {
+    color: #ff7a00 !important;
+}
+
+html.vi-light-mode .sb__bottomSep {
+    background: #cfc3b7 !important;
+}
+
+/* Sidebar controls: small pills above user card */
+html.vi-light-mode .sb__controls .theme-mode-toggle {
+    background: #ffffff !important;
+    border-color: transparent !important;
+    color: #2f2d2a !important;
+    box-shadow: none !important;
+    padding: 0 38px 0 14px !important;
+}
+
+html.vi-light-mode .sb__controls .theme-mode-knob,
+html.vi-light-mode .theme-mode-knob {
+    left: calc(100% - 31px) !important;
+    background: #9b8d7b !important;
+    box-shadow: inset 0 0 0 3px #e9e3dc !important;
+}
+
+html.vi-light-mode .theme-mode-knob::after {
+    display: none;
+}
+
+html.vi-light-mode .sb__controls .sb__logout,
+html.vi-light-mode .sb__logout {
+    background: #ffffff !important;
+    border-color: transparent !important;
+    color: #2b2927 !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .sb__controls .sb__logoutIcon,
+html.vi-light-mode .sb__logoutIcon {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .sb__logoutLabel {
+    color: #2b2927 !important;
+}
+
+/* =========================
+   Forms / search / buttons
+========================= */
+html.vi-light-mode .input,
+html.vi-light-mode select,
+html.vi-light-mode textarea,
+html.vi-light-mode .field input,
+html.vi-light-mode input.field,
+html.vi-light-mode .field,
+html.vi-light-mode #aiInput {
+    background: #f5f2ee !important;
+    border-color: #d3c7bc !important;
+    color: #2b2927 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .75) !important;
+}
+
+html.vi-light-mode .input::placeholder,
+html.vi-light-mode textarea::placeholder,
+html.vi-light-mode input::placeholder {
+    color: #6f6a64 !important;
+}
+
+html.vi-light-mode .btn {
+    background: #ffffff !important;
+    border-color: #e0c48d !important;
+    color: #e2a53a !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .btn-gold,
+html.vi-light-mode .badge,
+html.vi-light-mode .om-pill,
+html.vi-light-mode .pm-badge,
+html.vi-light-mode .order-status-badge,
+html.vi-light-mode .drive-help-btn {
+    color: #e2a53a !important;
+    background: #fffaf0 !important;
+    border-color: #f0c477 !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .btn-red,
+html.vi-light-mode .btn.btn-red {
+    background: #ee1427 !important;
+    border-color: #ee1427 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* =========================
+   Tables — rows seperti screenshot
+========================= */
+html.vi-light-mode .table {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .table th {
+    color: #f0b33f !important;
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+html.vi-light-mode .table td {
+    background: #f2eeeb !important;
+    border-top-color: #d4c8bd !important;
+    border-bottom-color: #d4c8bd !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .table tr td:first-child {
+    border-left-color: #d4c8bd !important;
+}
+
+html.vi-light-mode .table tr td:last-child {
+    border-right-color: #d4c8bd !important;
+}
+
+html.vi-light-mode .u-thumb-58,
+html.vi-light-mode .thumb,
+html.vi-light-mode .preview-thumb,
+html.vi-light-mode .dm-noimg {
+    background: #686868 !important;
+    color: #111111 !important;
+}
+
+/* =========================
+   Dashboard
+========================= */
+html.vi-light-mode .logo-box,
+html.vi-light-mode .trend-plot,
+html.vi-light-mode .goal-bar {
+    background: #f2eeeb !important;
+    border-color: #d4c8bd !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .goal-bar-fill {
+    background: linear-gradient(90deg, #8c7b55 0%, #c9bc83 100%) !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .trend-bar {
+    background: linear-gradient(180deg, #9b8b63 0%, #d8cda0 100%) !important;
+    border-color: #cdbfaf !important;
+}
+
+html.vi-light-mode .stat-trend,
+html.vi-light-mode .trend-box .badge {
+    background: rgba(238, 20, 39, .08) !important;
+    color: #ee1427 !important;
+}
+
+/* =========================
+   Mobile cards / list items
+========================= */
+html.vi-light-mode .om-card,
+html.vi-light-mode .dm-card,
+html.vi-light-mode .pm-card,
+html.vi-light-mode .design-mobile-empty,
+html.vi-light-mode .price-mobile-empty,
+html.vi-light-mode .order-mobile-empty,
+html.vi-light-mode .dashboard-latest-mobile .dlm-card {
+    background: #f2eeeb !important;
+    border-color: #d4c8bd !important;
+    box-shadow: none !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .dm-thumb-wrap,
+html.vi-light-mode .pm-thumb,
+html.vi-light-mode .vi-master-file--mobile {
+    background: #e7e2dc !important;
+    border-color: #d4c8bd !important;
+}
+
+html.vi-light-mode .dm-title,
+html.vi-light-mode .pm-title,
+html.vi-light-mode .om-client,
+html.vi-light-mode .om-value {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .dm-btn,
+html.vi-light-mode .pm-action {
+    background: #ffffff !important;
+    border-color: #f0c477 !important;
+    color: #e2a53a !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .dm-delete,
+html.vi-light-mode .pm-delete {
+    color: #ee1427 !important;
+    border-color: rgba(238, 20, 39, .45) !important;
+}
+
+html.vi-light-mode .om-status {
+    background: #fffaf0 !important;
+    color: #e2a53a !important;
+    border-color: #f0c477 !important;
+}
+
+html.vi-light-mode .om-value.unpaid,
+html.vi-light-mode .u-danger {
+    color: #ee1427 !important;
+}
+
+html.vi-light-mode .om-detail {
+    background: #e3b347 !important;
+    color: #111111 !important;
+}
+
+/* =========================
+   Drive Storage
+========================= */
+html.vi-light-mode .drive-sync-btn,
+html.vi-light-mode .drive-help-btn:hover {
+    background: #e3b347 !important;
+    color: #14110b !important;
+    border-color: #e3b347 !important;
+}
+
+html.vi-light-mode .drive-error-list {
+    color: #3a3428 !important;
+}
+
+/* =========================
+   Order detail / invoice pages
+========================= */
+html.vi-light-mode .preview-image,
+html.vi-light-mode .preview-link,
+html.vi-light-mode .revision-note {
+    border-color: #d4c8bd !important;
+}
+
+/* =========================
+   AI Overlay / Assistant
+========================= */
+html.vi-light-mode #aiOverlay {
+    background: rgba(251, 250, 248, .72) !important;
+}
+
+html.vi-light-mode #aiCard {
+    background: #fbfaf8 !important;
+    border-color: #d4c8bd !important;
+    box-shadow: 0 24px 80px rgba(112, 94, 73, .18) !important;
+}
+
+html.vi-light-mode .ai-header,
+html.vi-light-mode .ai-input-wrap,
+html.vi-light-mode .ai-suggest-bar,
+html.vi-light-mode .ai-info-section {
+    border-color: #d4c8bd !important;
+}
+
+html.vi-light-mode .ai-chat,
+html.vi-light-mode .ai-info-page {
+    background: transparent !important;
+}
+
+html.vi-light-mode .ai-msg.ai,
+html.vi-light-mode .ai-draft {
+    background: #f2eeeb !important;
+    border-color: #d4c8bd !important;
+    color: #2b2927 !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .ai-msg.user {
+    color: #5a3200 !important;
+    background: #fff0d7 !important;
+    border-color: #f0c477 !important;
+}
+
+html.vi-light-mode .ai-title,
+html.vi-light-mode .ai-hero-title,
+html.vi-light-mode .ai-info-inner h2,
+html.vi-light-mode .ai-draft-title {
+    color: #ff7a00 !important;
+}
+
+html.vi-light-mode .ai-hero-welcome,
+html.vi-light-mode .ai-draft-content {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .ai-hero-desc,
+html.vi-light-mode .ai-info-inner p {
+    color: #706b65 !important;
+}
+
+html.vi-light-mode .ai-input-container,
+html.vi-light-mode .ai-suggest,
+html.vi-light-mode .ai-info-btn,
+html.vi-light-mode .ai-btn-top {
+    background: #ffffff !important;
+    border-color: #f0c477 !important;
+    color: #ff7a00 !important;
+}
+
+html.vi-light-mode #aiInput {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: #2b2927 !important;
+    -webkit-text-fill-color: #2b2927 !important;
+}
+
+html.vi-light-mode #aiInput::placeholder {
+    color: #8f877f !important;
+    -webkit-text-fill-color: #8f877f !important;
+}
+
+/* =========================
+   Auth pages outside app
+========================= */
+html.vi-light-mode .wrap,
+html.vi-light-mode .auth-shell {
+    background: #fbfaf8 !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .soc,
+html.vi-light-mode .icon-badge {
+    background: #ffffff !important;
+    border-color: #d4c8bd !important;
+    color: #e2a53a !important;
+}
+
+/* =========================
+   Mobile header and search
+========================= */
+@media (max-width: 767px) {
+    html.vi-light-mode .container.app > .card > .card-header:first-child {
+        background: #fbfaf8 !important;
+        border-color: #d4c8bd !important;
+        box-shadow: 0 8px 20px rgba(112, 94, 73, .10) !important;
+    }
+
+    html.vi-light-mode .sb-toggle {
+        background: #f8f6f2 !important;
+        color: #e2a53a !important;
+        border-color: #e2a53a !important;
+        box-shadow: none !important;
+    }
+
+    html.vi-light-mode .sb-toggle:hover,
+    html.vi-light-mode .sb-toggle:focus-visible,
+    html.vi-light-mode .sb-toggle:active {
+        background: #e2a53a !important;
+        color: #111111 !important;
+    }
+
+    html.vi-light-mode .sb-overlay {
+        background: rgba(25, 22, 18, .38) !important;
+    }
+
+    html.vi-light-mode .mobile-search-compact {
+        background-color: #f5f2ee !important;
+        border-color: #d3c7bc !important;
+        color: #2b2927 !important;
+        box-shadow: none !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f0b33f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'%3E%3C/circle%3E%3Cpath d='m20 20-3.5-3.5'%3E%3C/path%3E%3C/svg%3E") !important;
+    }
+
+    html.vi-light-mode .mobile-search-compact:hover,
+    html.vi-light-mode .mobile-search-compact:focus,
+    html.vi-light-mode .mobile-search-compact:not(:placeholder-shown) {
+        color: #2b2927 !important;
+        caret-color: #f0b33f !important;
+    }
+
+    html.vi-light-mode .mobile-search-compact:hover::placeholder,
+    html.vi-light-mode .mobile-search-compact:focus::placeholder {
+        color: #706b65 !important;
+    }
+}
+
+/* =========================================================
+   LIGHT MODE MOBILE FINAL 20260619 REV2
+   Layout mengikuti dark mode; warna menyesuaikan light mode.
+========================================================= */
+@media (max-width: 767px) {
+    html.vi-light-mode .om-pill,
+    html.vi-light-mode .pm-badge {
+        background: #fffaf0 !important;
+        border-color: #f0c477 !important;
+        color: #e2a53a !important;
+    }
+
+    html.vi-light-mode .om-delete,
+    html.vi-light-mode .pm-delete,
+    html.vi-light-mode .dm-delete {
+        background: #fffdf9 !important;
+        color: #ee1427 !important;
+        border: 1px solid rgba(238, 20, 39, .58) !important;
+        box-shadow: none !important;
+    }
+
+    html.vi-light-mode .om-edit,
+    html.vi-light-mode .pm-edit,
+    html.vi-light-mode .dm-edit {
+        background: #fffdf9 !important;
+        color: #e2a53a !important;
+        border: 1px solid #f0c477 !important;
+        box-shadow: none !important;
+    }
+
+    html.vi-light-mode .om-value {
+        text-align: right !important;
+    }
+
+    html.vi-light-mode .mobile-search-compact:placeholder-shown:not(:focus) {
+        width: 48px !important;
+        max-width: 48px !important;
+        min-width: 48px !important;
+        flex: 0 0 48px !important;
+        color: transparent !important;
+        caret-color: transparent !important;
+        font-size: 0 !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: 22px 22px !important;
+        overflow: hidden !important;
+    }
+}

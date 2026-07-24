@@ -1,0 +1,215 @@
+/* =========================
+   THEME TOKENS (DARK default)
+   ========================= */
+:root {
+	/* surfaces */
+	--bg: #070707;
+	--bg2: #0b0b0b;
+	--card: rgba(255, 255, 255, 0.04);
+	--card2: rgba(255, 255, 255, 0.03);
+	--soft: rgba(255, 255, 255, 0.06);
+
+	/* text */
+	--text: rgba(255, 255, 255, 0.92);
+	--muted: rgba(255, 255, 255, 0.62);
+
+	/* borders & shadow */
+	--border: rgba(255, 255, 255, 0.08);
+	--border2: rgba(255, 255, 255, 0.1);
+	--shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+
+	/* accents */
+	--gold: #caa24a;
+	--gold2: #b88f35;
+	--red: #b80012;
+	--red2: #ff2d3f;
+
+	/* effects */
+	--glow: 0 0 0 1px rgba(202, 162, 74, 0.12), 0 16px 30px rgba(0, 0, 0, 0.55);
+	--glow2: 0 0 22px rgba(180, 92, 255, 0.22);
+
+	/* chart */
+	--purple: rgba(180, 92, 255, 0.95);
+	--pink: rgba(255, 79, 216, 0.75);
+}
+
+/* =========================
+   LIGHT THEME (beige + brown)
+   html[data-theme="light"]
+   ========================= */
+html[data-theme="light"] {
+	--bg: #f6efe6; /* cream */
+	--bg2: #f3e7da; /* lighter cream */
+	--card: rgba(255, 255, 255, 0.78);
+	--card2: rgba(255, 255, 255, 0.62);
+	--soft: rgba(125, 85, 60, 0.06);
+
+	--text: rgba(34, 24, 18, 0.92); /* dark brown-ish */
+	--muted: rgba(34, 24, 18, 0.62);
+
+	--border: rgba(90, 60, 40, 0.14);
+	--border2: rgba(90, 60, 40, 0.18);
+	--shadow: 0 18px 45px rgba(90, 60, 40, 0.12);
+
+	--gold: #7b4f37; /* brown accent */
+	--gold2: #5f3c2b;
+
+	--red: #8d0c16;
+	--red2: #c01a28;
+
+	--glow: 0 0 0 1px rgba(123, 79, 55, 0.14), 0 12px 30px rgba(90, 60, 40, 0.12);
+	--glow2: 0 0 18px rgba(123, 79, 55, 0.16);
+
+	--purple: rgba(123, 79, 55, 0.92); /* bar chart jadi brown-ish */
+	--pink: rgba(170, 110, 80, 0.65);
+}
+
+/* =========================
+   APPLY TOKENS TO BASE UI
+   (biar semua page ikut)
+   ========================= */
+html,
+body {
+	height: 100%;
+}
+body {
+	background: radial-gradient(
+		circle at 20% 0%,
+		var(--bg2) 0%,
+		var(--bg) 55%,
+		var(--bg) 100%
+	);
+	color: var(--text);
+}
+
+/* Card */
+.card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow);
+}
+.card-header {
+	border-bottom: 1px solid var(--border);
+}
+.sep {
+	border: 0;
+	border-top: 1px solid var(--border);
+}
+
+/* Inputs */
+.input,
+select,
+textarea {
+	background: var(--card2);
+	border: 1px solid var(--border);
+	color: var(--text);
+}
+.input::placeholder,
+textarea::placeholder {
+	color: var(--muted);
+}
+
+/* Table */
+.table thead th {
+	background: var(--soft);
+	border-bottom: 1px solid var(--border);
+}
+.table td,
+.table th {
+	border-bottom: 1px solid var(--border);
+}
+
+/* Badge */
+.badge {
+	border: 1px solid var(--border2);
+	background: var(--soft);
+	color: var(--text);
+}
+
+/* Buttons */
+.btn {
+	border: 1px solid var(--border);
+	background: var(--card2);
+	color: var(--text);
+}
+.btn:hover {
+	filter: brightness(1.06);
+}
+.btn-red {
+	background: linear-gradient(180deg, var(--red2) 0%, var(--red) 100%);
+	border-color: rgba(255, 255, 255, 0.08);
+	color: #fff;
+}
+.btn-gold {
+	border-color: rgba(202, 162, 74, 0.25);
+	color: var(--gold);
+	background: rgba(202, 162, 74, 0.08);
+}
+html[data-theme="light"] .btn-gold {
+	border-color: rgba(123, 79, 55, 0.25);
+	background: rgba(123, 79, 55, 0.1);
+}
+/* ===== Theme Toggle Switch ===== */
+.theme-switch {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 10px;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	background: var(--card2);
+}
+
+.theme-switch .label {
+	font-size: 12px;
+	color: var(--muted);
+	user-select: none;
+}
+
+.switch {
+	position: relative;
+	width: 54px;
+	height: 30px;
+}
+.switch input {
+	display: none;
+}
+.slider {
+	position: absolute;
+	inset: 0;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid var(--border);
+	transition: 0.25s;
+}
+.slider:before {
+	content: "";
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 3px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 999px;
+	background: linear-gradient(180deg, var(--gold) 0%, var(--gold2) 100%);
+	box-shadow: var(--glow);
+	transition: 0.25s;
+}
+
+html[data-theme="light"] .slider {
+	background: rgba(123, 79, 55, 0.1);
+}
+
+.switch input:checked + .slider:before {
+	transform: translate(24px, -50%);
+}
+
+/* icon kecil */
+.theme-ico {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	background: var(--soft);
+}

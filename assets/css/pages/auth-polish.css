@@ -1,0 +1,690 @@
+/* =========================================================
+   AUTH POLISH — loaded after theme-light on login/forgot/reset.
+========================================================= */
+.field,
+.btn,
+.soc,
+.admin-account,
+.login-card,
+.avatar-frame,
+.auth-card,
+.visual-card,
+.brand-mini {
+    transition: border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .18s ease, filter .18s ease;
+}
+
+.field:focus,
+.field:focus-within,
+.password-wrap:focus-within .field {
+    border-color: rgba(246, 211, 124, .72) !important;
+    box-shadow: 0 0 0 3px rgba(202, 162, 74, .14), inset 0 0 0 1px rgba(255, 255, 255, .04) !important;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.soc {
+    cursor: default;
+}
+
+html.vi-light-mode body {
+    background: #fbfaf8 !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode body::before {
+    opacity: .18 !important;
+}
+
+html.vi-light-mode .wrap,
+html.vi-light-mode .auth-shell {
+    background: #fffdf9 !important;
+    border-color: #d4c8bd !important;
+    box-shadow: 0 22px 55px rgba(112, 94, 73, .12) !important;
+}
+
+html.vi-light-mode .login-card,
+html.vi-light-mode .auth-card,
+html.vi-light-mode .visual-card {
+    background: #f4efe9 !important;
+    border-color: #d4c8bd !important;
+    box-shadow: 0 12px 32px rgba(112, 94, 73, .08) !important;
+}
+
+html.vi-light-mode .brand-mini,
+html.vi-light-mode .soc,
+html.vi-light-mode .avatar-frame,
+html.vi-light-mode .admin-logo,
+html.vi-light-mode .icon-badge,
+html.vi-light-mode .toggle-eye {
+    background: #fffdf9 !important;
+    border-color: #d4c8bd !important;
+    box-shadow: none !important;
+    color: #d79624 !important;
+}
+
+html.vi-light-mode .brand .t1,
+html.vi-light-mode .name,
+html.vi-light-mode .brand-mini strong,
+html.vi-light-mode h1 {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .brand .t2,
+html.vi-light-mode .role,
+html.vi-light-mode .sub,
+html.vi-light-mode .label,
+html.vi-light-mode .row2,
+html.vi-light-mode .row2 a,
+html.vi-light-mode .admin-text,
+html.vi-light-mode .brand-mini span,
+html.vi-light-mode .desc,
+html.vi-light-mode label {
+    color: #706b65 !important;
+}
+
+html.vi-light-mode .sub b,
+html.vi-light-mode .row2 a:hover,
+html.vi-light-mode .eyebrow,
+html.vi-light-mode .alert a,
+html.vi-light-mode .back-link a {
+    color: #d79624 !important;
+}
+
+html.vi-light-mode .field {
+    background: #f5f2ee !important;
+    border-color: #d3c7bc !important;
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .field input,
+html.vi-light-mode .field {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .field input::placeholder,
+html.vi-light-mode .field::placeholder {
+    color: #8a8178 !important;
+}
+
+html.vi-light-mode .btn {
+    color: #14110b !important;
+}
+
+@media (max-width: 920px) {
+    .login-card {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .mobile-avatar {
+        transform: none !important;
+    }
+}
+
+/* =========================================================
+   LOGIN REVISION 20260619
+   Light mode mengikuti referensi user. Avatar/foto kanan tidak disentuh.
+========================================================= */
+html.vi-light-mode body.login-auth-page {
+    background: #ffffff !important;
+}
+
+html.vi-light-mode body.login-auth-page::before,
+html.vi-light-mode body.login-auth-page .nav,
+html.vi-light-mode body.login-auth-page .social,
+html.vi-light-mode body.login-auth-page .admin-account {
+    display: none !important;
+}
+
+html.vi-light-mode body.login-auth-page .wrap {
+    width: min(1040px, 100%) !important;
+    background: #ffffff !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+html.vi-light-mode body.login-auth-page .content {
+    min-height: 520px !important;
+    grid-template-columns: 1.08fr .92fr !important;
+}
+
+html.vi-light-mode body.login-auth-page .left {
+    padding: 30px 28px 36px 28px !important;
+}
+
+html.vi-light-mode body.login-auth-page .brand {
+    margin-bottom: 26px !important;
+    gap: 10px !important;
+}
+
+html.vi-light-mode body.login-auth-page .brand img {
+    width: 31px !important;
+    height: 31px !important;
+    filter: none !important;
+}
+
+html.vi-light-mode body.login-auth-page .brand .t1 {
+    color: #4a4848 !important;
+    font-size: 18px !important;
+    line-height: 1.05 !important;
+    font-weight: 950 !important;
+    letter-spacing: -.2px !important;
+}
+
+html.vi-light-mode body.login-auth-page .brand .t2 {
+    color: #8a8580 !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    margin-top: 2px !important;
+    font-weight: 600 !important;
+}
+
+html.vi-light-mode body.login-auth-page .login-card {
+    max-width: 475px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode body.login-auth-page .login-card h1 {
+    color: #444242 !important;
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    letter-spacing: .2px !important;
+    margin: 0 0 8px !important;
+    font-weight: 950 !important;
+}
+
+html.vi-light-mode body.login-auth-page .login-card .sub {
+    color: #4f4d4d !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin: 0 0 20px !important;
+    font-weight: 700 !important;
+}
+
+html.vi-light-mode body.login-auth-page .login-card .sub b {
+    color: #4f4d4d !important;
+}
+
+html.vi-light-mode body.login-auth-page .form {
+    margin-top: 0 !important;
+    max-width: 475px !important;
+}
+
+html.vi-light-mode body.login-auth-page .label {
+    color: #4b4949 !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    margin: 15px 0 6px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0 !important;
+}
+
+html.vi-light-mode body.login-auth-page .field {
+    min-height: 49px !important;
+    padding: 0 18px !important;
+    border-radius: 999px !important;
+    background: #e9e3de !important;
+    border: 1px solid #bda88f !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode body.login-auth-page .field:focus-within {
+    border-color: #bda88f !important;
+    box-shadow: 0 0 0 3px rgba(197, 171, 142, .20) !important;
+}
+
+html.vi-light-mode body.login-auth-page .field input {
+    background: transparent !important;
+    color: #3f3d3d !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+}
+
+html.vi-light-mode body.login-auth-page .field input::placeholder {
+    color: #756d66 !important;
+}
+
+html.vi-light-mode body.login-auth-page .eye {
+    color: #4f4d4d !important;
+    opacity: .75 !important;
+    filter: grayscale(1) brightness(.55) !important;
+}
+
+html.vi-light-mode body.login-auth-page .row2 {
+    max-width: 475px !important;
+    margin-top: 12px !important;
+    color: #4b4949 !important;
+    font-size: 13px !important;
+    font-weight: 850 !important;
+}
+
+html.vi-light-mode body.login-auth-page .remember-label {
+    gap: 8px !important;
+}
+
+html.vi-light-mode body.login-auth-page .remember-label input {
+    width: 13px !important;
+    height: 13px !important;
+    accent-color: #c7aa8d !important;
+}
+
+html.vi-light-mode body.login-auth-page .row2 a {
+    color: #4b4949 !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    text-transform: capitalize !important;
+}
+
+html.vi-light-mode body.login-auth-page .btn {
+    max-width: 475px !important;
+    height: 48px !important;
+    margin-top: 18px !important;
+    border-radius: 999px !important;
+    color: #ffffff !important;
+    background: #cbb296 !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    font-weight: 950 !important;
+    letter-spacing: 0 !important;
+}
+
+html.vi-light-mode body.login-auth-page .btn:hover {
+    filter: brightness(.98) !important;
+}
+
+/* Dark mode autofill/input fix: hilangkan background putih bawaan browser. */
+html.vi-dark-mode .field input,
+html.vi-dark-mode .field input:focus {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+html.vi-dark-mode .field input:-webkit-autofill,
+html.vi-dark-mode .field input:-webkit-autofill:hover,
+html.vi-dark-mode .field input:-webkit-autofill:focus,
+html.vi-dark-mode .field input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #10100f inset !important;
+    box-shadow: 0 0 0 1000px #10100f inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    border: 0 !important;
+    transition: background-color 9999s ease-out 0s !important;
+}
+
+html.vi-light-mode body.login-auth-page .field input:-webkit-autofill,
+html.vi-light-mode body.login-auth-page .field input:-webkit-autofill:hover,
+html.vi-light-mode body.login-auth-page .field input:-webkit-autofill:focus,
+html.vi-light-mode body.login-auth-page .field input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #e9e3de inset !important;
+    box-shadow: 0 0 0 1000px #e9e3de inset !important;
+    -webkit-text-fill-color: #3f3d3d !important;
+    caret-color: #3f3d3d !important;
+    border: 0 !important;
+}
+
+@media (max-width: 920px) {
+    html.vi-light-mode body.login-auth-page .content {
+        grid-template-columns: 1fr !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .left {
+        padding: 0 18px 28px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .brand {
+        display: flex !important;
+        align-self: flex-start !important;
+        margin-top: 24px !important;
+        margin-left: 4px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .login-card {
+        width: 100% !important;
+        max-width: 475px !important;
+        margin: 18px auto 0 !important;
+        text-align: left !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .form,
+    html.vi-light-mode body.login-auth-page .row2,
+    html.vi-light-mode body.login-auth-page .btn {
+        max-width: 475px !important;
+    }
+}
+
+/* =========================================================
+   LOGIN LIGHT CARD RESTORE 20260619 REV2
+   Komponen form tetap seperti referensi; hanya mengembalikan
+   background luar + card/container utama seperti dark mode versi light.
+========================================================= */
+html.vi-light-mode body.login-auth-page {
+    background:
+        radial-gradient(1200px 700px at 18% 20%, rgba(203, 178, 150, .28) 0%, rgba(255, 255, 255, 1) 56%),
+        radial-gradient(900px 520px at 88% 62%, rgba(226, 165, 58, .10) 0%, rgba(255, 255, 255, 1) 62%),
+        #fffdf9 !important;
+}
+
+html.vi-light-mode body.login-auth-page::before {
+    display: block !important;
+    content: "" !important;
+    position: fixed !important;
+    inset: -40px !important;
+    background-image:
+        radial-gradient(circle at 30% 30%, rgba(112, 94, 73, .10) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 70%, rgba(112, 94, 73, .07) 0 1px, transparent 2px),
+        repeating-radial-gradient(circle at 20% 40%, rgba(112, 94, 73, .055) 0 1px, transparent 40px),
+        repeating-radial-gradient(circle at 70% 40%, rgba(112, 94, 73, .04) 0 1px, transparent 46px) !important;
+    opacity: .38 !important;
+    pointer-events: none !important;
+    filter: blur(.2px) !important;
+}
+
+html.vi-light-mode body.login-auth-page .wrap {
+    width: min(980px, 100%) !important;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 242, .96) 0%, rgba(255, 253, 249, .98) 48%, rgba(248, 244, 238, .98) 100%) !important;
+    border: 1px solid rgba(189, 168, 143, .58) !important;
+    border-radius: 22px !important;
+    box-shadow: 0 28px 80px rgba(112, 94, 73, .18) !important;
+    overflow: hidden !important;
+}
+
+html.vi-light-mode body.login-auth-page .wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 16% 0%, rgba(226, 165, 58, .12), transparent 38%),
+        linear-gradient(180deg, rgba(203, 178, 150, .10), rgba(255, 255, 255, 0) 42%);
+    pointer-events: none;
+}
+
+html.vi-light-mode body.login-auth-page .content {
+    min-height: 520px !important;
+    grid-template-columns: 1.15fr .85fr !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+html.vi-light-mode body.login-auth-page .left {
+    padding: 42px 42px 38px 42px !important;
+}
+
+html.vi-light-mode body.login-auth-page .right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 520px !important;
+}
+
+html.vi-light-mode body.login-auth-page .right .avatar-frame {
+    box-shadow: 0 18px 44px rgba(112, 94, 73, .16) !important;
+}
+
+@media (max-width: 920px) {
+    html.vi-light-mode body.login-auth-page .wrap {
+        width: min(560px, 100%) !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .content {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .left {
+        padding: 26px 22px 30px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .right {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   LOGIN MOBILE LIGHT FIX 20260619 REV3
+   Mobile light mengikuti struktur mobile dark: avatar/brand di atas,
+   card form di bawah. Avatar/foto tidak diubah.
+========================================================= */
+@media (max-width: 920px) {
+    html.vi-light-mode body.login-auth-page {
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        padding: 36px 14px 34px !important;
+        background:
+            radial-gradient(820px 520px at 20% 10%, rgba(203, 178, 150, .26) 0%, rgba(255, 253, 249, .92) 58%),
+            radial-gradient(680px 440px at 86% 70%, rgba(226, 165, 58, .10) 0%, rgba(255, 253, 249, .95) 62%),
+            #fffdf9 !important;
+    }
+
+    html.vi-light-mode body.login-auth-page::before {
+        display: block !important;
+        opacity: .30 !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .wrap {
+        width: min(380px, 100%) !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .wrap::before,
+    html.vi-light-mode body.login-auth-page .right,
+    html.vi-light-mode body.login-auth-page .brand,
+    html.vi-light-mode body.login-auth-page .nav,
+    html.vi-light-mode body.login-auth-page .social {
+        display: none !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .content {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+        width: 100% !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .left {
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .login-card {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 202px auto 0 !important;
+        padding: 30px 22px 28px !important;
+        border-radius: 22px !important;
+        background:
+            linear-gradient(180deg, rgba(255, 250, 242, .98), rgba(255, 253, 249, .98)) !important;
+        border: 1px solid rgba(189, 168, 143, .55) !important;
+        box-shadow: 0 18px 50px rgba(112, 94, 73, .14) !important;
+        text-align: center !important;
+        overflow: visible !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .top-profile {
+        display: flex !important;
+        position: absolute !important;
+        top: -196px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        z-index: 5 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        pointer-events: none !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .top-profile > * {
+        pointer-events: auto !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .mobile-avatar {
+        width: 104px !important;
+        height: 104px !important;
+        margin: 0 !important;
+        transform: none !important;
+        border-radius: 14px !important;
+        background: #fffdf9 !important;
+        border: 1px solid rgba(189, 168, 143, .58) !important;
+        box-shadow: 0 12px 26px rgba(112, 94, 73, .16) !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .top-profile .name {
+        color: #4a4848 !important;
+        font-size: 16px !important;
+        line-height: 1.1 !important;
+        font-weight: 950 !important;
+        margin-top: 6px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .top-profile .role {
+        color: #77716b !important;
+        font-size: 12px !important;
+        line-height: 1.15 !important;
+        font-weight: 700 !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .login-card h1 {
+        font-size: 24px !important;
+        line-height: 1.05 !important;
+        margin: 0 0 8px !important;
+        text-align: center !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .login-card .sub {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+        margin: 0 auto 18px !important;
+        max-width: 310px !important;
+        text-align: center !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .form,
+    html.vi-light-mode body.login-auth-page .row2,
+    html.vi-light-mode body.login-auth-page .btn {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .label {
+        text-align: center !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .field {
+        min-height: 43px !important;
+        padding: 0 14px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .row2 {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+        font-size: 12px !important;
+        text-align: left !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .btn {
+        height: 44px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .admin-account {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-top: 18px !important;
+        gap: 6px !important;
+        opacity: .84 !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .admin-logo {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 50% !important;
+        background: #fffdf9 !important;
+        border: 1px solid rgba(189, 168, 143, .55) !important;
+        box-shadow: 0 8px 18px rgba(112, 94, 73, .10) !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .admin-text {
+        color: #77716b !important;
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    html.vi-light-mode body.login-auth-page {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    html.vi-light-mode body.login-auth-page .login-card {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+}
+
+/* =========================================================
+   LOGIN MOBILE DARK AVATAR PRECISION 20260619 REV4
+   Merapikan foto/avatar atas tanpa mengubah warna/desain form.
+========================================================= */
+@media (max-width: 920px) {
+    html.vi-dark-mode body.login-auth-page .top-profile {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    html.vi-dark-mode body.login-auth-page .mobile-avatar {
+        margin: 0 auto !important;
+        transform: none !important;
+        width: 104px !important;
+        height: 104px !important;
+        flex: 0 0 auto !important;
+    }
+
+    html.vi-dark-mode body.login-auth-page .mobile-avatar img {
+        width: 92% !important;
+        height: 92% !important;
+        object-fit: contain !important;
+    }
+
+    html.vi-dark-mode body.login-auth-page .top-profile .name,
+    html.vi-dark-mode body.login-auth-page .top-profile .role {
+        text-align: center !important;
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,392 @@
+/* =========================================================
+   GOOGLE DRIVE STORAGE PAGE
+   Layout-only refinements. Color/style tetap mengikuti theme.
+========================================================= */
+.drive-page .card-header,
+.drive-page-header {
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.drive-page-header h1 {
+    line-height: 1.15;
+}
+
+.drive-header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.drive-help-btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+    font-weight: 950;
+    color: var(--gold);
+    border-color: rgba(202, 162, 74, .58);
+    box-shadow: inset 0 0 0 1px rgba(202, 162, 74, .12);
+}
+
+.drive-help-btn:hover {
+    color: #000;
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.drive-page-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.drive-intro {
+    max-width: 980px;
+    line-height: 1.65;
+}
+
+.drive-flash {
+    align-self: flex-start;
+    margin-top: 12px;
+    line-height: 1.35;
+}
+
+.drive-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
+}
+
+.drive-stat-grid-secondary {
+    margin-top: 14px;
+}
+
+.drive-stat-card {
+    padding: 18px 20px;
+    min-height: 86px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    overflow: hidden;
+}
+
+.drive-stat-label {
+    line-height: 1.35;
+    margin: 0;
+}
+
+.drive-stat-value {
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 950;
+    letter-spacing: .1px;
+    word-break: break-word;
+}
+
+.drive-stat-note {
+    line-height: 1.4;
+    margin: 0;
+}
+
+.drive-inline-alert {
+    align-self: flex-start;
+    line-height: 1.35;
+}
+
+.drive-action-card {
+    padding: 18px;
+}
+
+.drive-action-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.drive-action-head .small {
+    line-height: 1.55;
+    max-width: 820px;
+}
+
+.drive-action-list {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.drive-action-list form {
+    margin: 0;
+    display: inline-flex;
+}
+
+.drive-sync-btn {
+    color: #000;
+    background: linear-gradient(180deg, #d9af4e 0%, var(--gold) 100%);
+    border-color: rgba(202, 162, 74, .8);
+    font-weight: 850;
+    box-shadow: 0 10px 24px rgba(202, 162, 74, .14);
+}
+
+.drive-sync-btn:hover {
+    background: linear-gradient(180deg, #e2bd61 0%, #caa24a 100%);
+    filter: brightness(1.03);
+}
+
+.drive-action-note {
+    margin-top: 14px;
+    line-height: 1.55;
+}
+
+.drive-error-sep {
+    margin-top: 18px;
+}
+
+.drive-errors-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.drive-errors-card summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--gold);
+    font-weight: 900;
+    border-bottom: 1px solid transparent;
+}
+
+.drive-errors-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.drive-errors-card summary::before {
+    content: "▸";
+    color: var(--gold);
+    transition: transform .18s ease;
+    margin-right: 2px;
+}
+
+.drive-errors-card[open] summary {
+    border-bottom-color: var(--border);
+}
+
+.drive-errors-card[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.drive-error-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.drive-error-list {
+    margin: 0;
+    padding: 16px 18px 18px 34px;
+    line-height: 1.65;
+    max-height: 420px;
+    overflow: auto;
+}
+
+.drive-error-list li + li {
+    margin-top: 8px;
+}
+
+/* Guide */
+.drive-guide-title {
+    font-size: 18px;
+}
+
+.drive-guide-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 14px;
+    align-items: start;
+}
+
+.drive-guide-card {
+    padding: 18px 20px;
+}
+
+.drive-guide-card h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.drive-guide-list {
+    line-height: 1.85;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.drive-guide-list li + li {
+    margin-top: 4px;
+}
+
+.drive-guide-item {
+    padding: 0 0 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.drive-guide-item .small {
+    line-height: 1.55;
+    margin-top: 6px;
+}
+
+.drive-guide-item.is-last {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.drive-security-card {
+    margin-top: 14px;
+}
+
+@media (max-width: 980px) {
+    .drive-stat-grid,
+    .drive-guide-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .drive-page .card-header,
+    .drive-page-header {
+        align-items: center;
+    }
+
+    .drive-header-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .drive-stat-card,
+    .drive-action-card,
+    .drive-guide-card {
+        padding: 16px;
+    }
+
+    .drive-action-list,
+    .drive-action-list form,
+    .drive-action-list .btn {
+        width: 100%;
+    }
+
+    .drive-action-list .btn {
+        justify-content: center;
+    }
+
+    .drive-errors-card summary {
+        align-items: flex-start;
+    }
+}
+
+/* =========================================================
+   DRIVE GUIDE REVISION 20260619
+   Merapikan Panduan Google Drive Storage tanpa mengganti warna/theme.
+========================================================= */
+.drive-guide-page .drive-page-body {
+    gap: 0;
+}
+
+.drive-guide-page .drive-intro {
+    max-width: 860px;
+    margin-bottom: 2px;
+}
+
+.drive-guide-page .sep {
+    margin: 14px 0;
+}
+
+.drive-guide-page .drive-guide-steps {
+    gap: 12px;
+}
+
+.drive-guide-page .drive-guide-steps .drive-stat-card {
+    min-height: 104px;
+    padding: 16px 18px;
+    justify-content: flex-start;
+}
+
+.drive-guide-page .drive-guide-title {
+    font-size: 18px;
+    line-height: 1.15;
+}
+
+.drive-guide-page .drive-guide-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(340px, .9fr);
+    gap: 14px;
+    align-items: stretch;
+}
+
+.drive-guide-page .drive-guide-card {
+    padding: 18px 20px;
+    min-width: 0;
+}
+
+.drive-guide-page .drive-guide-card h2 {
+    margin-bottom: 14px;
+}
+
+.drive-guide-page .drive-guide-list {
+    line-height: 1.72;
+}
+
+.drive-guide-page .drive-guide-list li + li {
+    margin-top: 6px;
+}
+
+.drive-guide-page .drive-guide-item {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.drive-guide-page .drive-guide-item .small {
+    margin-top: 5px;
+    line-height: 1.48;
+}
+
+.drive-guide-page .drive-security-card {
+    margin-top: 14px;
+    padding: 18px 20px;
+}
+
+.drive-guide-page .drive-security-card .drive-guide-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 6px;
+    line-height: 1.6;
+}
+
+.drive-guide-page .drive-security-card .drive-guide-list li + li {
+    margin-top: 0;
+}
+
+@media (max-width: 1100px) {
+    .drive-guide-page .drive-guide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-guide-page .drive-security-card .drive-guide-list {
+        grid-template-columns: 1fr;
+    }
+}

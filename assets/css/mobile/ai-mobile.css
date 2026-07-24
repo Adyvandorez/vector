@@ -1,0 +1,311 @@
+/* =========================================================
+   AI ASSISTANT MOBILE CSS
+   Khusus overlay AI dan halaman panduan AI di mobile.
+========================================================= */
+
+/* Info mode juga berlaku desktop: saat panduan dibuka, input chat disembunyikan. */
+#aiCard.info-mode .ai-chat,
+#aiCard.info-mode .ai-suggest-bar,
+#aiCard.info-mode .ai-input-wrap {
+    display: none !important;
+}
+
+#aiCard.info-mode .ai-info-page {
+    display: block !important;
+    position: relative;
+    inset: auto;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.ai-info-page {
+    background:
+        radial-gradient(circle at 24% 0%, rgba(255, 140, 0, .10), transparent 34%),
+        radial-gradient(circle at 86% 100%, rgba(255, 80, 0, .08), transparent 35%),
+        linear-gradient(180deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, .01));
+}
+
+.ai-info-inner {
+    width: 100%;
+}
+
+.ai-info-section {
+    border-bottom-color: rgba(255, 140, 0, .16);
+}
+
+@media (max-width: 767px) {
+    #aiOverlay {
+        align-items: stretch;
+        justify-content: stretch;
+        padding: 8px;
+    }
+
+    #aiCard {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: calc(100vh - 16px);
+        border-radius: 22px;
+    }
+
+    .ai-header {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .ai-title {
+        min-width: 0;
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .ai-logo {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+    }
+
+    .ai-actions {
+        gap: 7px;
+        flex: 0 0 auto;
+    }
+
+    .ai-btn-top {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    .ai-chat {
+        padding: 18px 14px;
+        gap: 14px;
+    }
+
+    .ai-msg {
+        max-width: 88%;
+        font-size: 13px;
+    }
+
+    .ai-hero-img {
+        width: 135px;
+    }
+
+    .ai-hero-title {
+        font-size: 22px;
+    }
+
+    .ai-suggest-bar {
+        padding: 12px 14px;
+        gap: 8px;
+        max-height: 104px;
+        overflow-y: auto;
+    }
+
+    .ai-suggest-bar .ai-suggest {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .ai-input-wrap {
+        padding: 12px 14px 14px;
+    }
+
+    .ai-input-container {
+        padding: 8px 10px;
+        border-radius: 16px;
+        gap: 8px;
+    }
+
+    #aiInput {
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    #aiSend {
+        padding: 8px 13px;
+        border-radius: 12px;
+        flex: 0 0 auto;
+    }
+
+    .ai-info-page {
+        padding: 18px 14px;
+        background:
+            radial-gradient(circle at 20% 0%, rgba(255, 140, 0, .12), transparent 36%),
+            radial-gradient(circle at 90% 100%, rgba(255, 80, 0, .10), transparent 36%),
+            linear-gradient(180deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, .01));
+    }
+
+    .ai-info-inner {
+        max-width: none;
+        margin: 0;
+    }
+
+    .ai-info-inner h2,
+    .ai-info-group h2 {
+        font-size: 20px;
+        line-height: 1.2;
+        margin: 0 0 12px;
+        color: #ff8c00;
+    }
+
+    .ai-info-inner p {
+        font-size: 13px;
+        line-height: 1.65;
+        color: #ddd;
+    }
+
+    .ai-info-group {
+        margin-top: 28px;
+    }
+
+    .ai-info-section {
+        margin-top: 14px;
+        padding: 14px;
+        border: 1px solid rgba(255, 140, 0, .14);
+        border-radius: 16px;
+        background: rgba(0, 0, 0, .22);
+    }
+
+    .ai-info-section h3 {
+        margin: 0 0 8px;
+        color: #ffb366;
+        font-size: 15px;
+        line-height: 1.25;
+    }
+
+    .ai-info-section p {
+        margin: 0;
+    }
+
+    .ai-info-command {
+        margin-top: 10px;
+    }
+
+    .ai-info-btn {
+        width: 100%;
+        min-height: 40px;
+        justify-content: center;
+        border-radius: 14px;
+        font-weight: 800;
+    }
+}
+
+/* =========================================================
+   AI INFO PROFESSIONAL REFINEMENT
+   Info mode memakai nuansa background yang sama dengan chat,
+   dan input/suggestion disembunyikan total.
+========================================================= */
+#aiCard.info-mode .ai-chat,
+#aiCard.info-mode .ai-suggest-bar,
+#aiCard.info-mode .ai-input-wrap {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+#aiCard.info-mode .ai-info-page {
+    display: block !important;
+    position: relative;
+    inset: auto;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 140, 0, .10), transparent 34%),
+        radial-gradient(circle at 90% 100%, rgba(255, 80, 0, .08), transparent 36%),
+        linear-gradient(180deg, rgba(20, 20, 20, .35), rgba(8, 8, 8, .78));
+}
+
+#aiCard.info-mode .ai-info-inner {
+    width: min(820px, 100%);
+    margin: 0 auto;
+}
+
+#aiCard.info-mode .ai-info-section {
+    border: 1px solid rgba(255, 140, 0, .14);
+    border-radius: 18px;
+    padding: 16px;
+    background: rgba(0, 0, 0, .24);
+}
+
+/* =========================================================
+   REVISION: mobile AI recommendations only show 3 chips
+========================================================= */
+@media (max-width: 767px) {
+    .ai-suggest-bar .ai-suggest:nth-child(n+4) {
+        display: none !important;
+    }
+
+    .ai-suggest-bar {
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+
+/* =========================================================
+   AI INPUT WIZARD MOBILE TUNING
+========================================================= */
+@media (max-width: 767px) {
+    .ai-input-mode {
+        max-width: 100%;
+        gap: 14px;
+    }
+
+    .ai-input-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .ai-input-card h3 {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .ai-input-grid,
+    .ai-input-grid.full {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ai-label {
+        font-size: 11px;
+    }
+
+    .ai-field input,
+    .ai-field select,
+    .ai-field textarea {
+        min-height: 40px;
+        font-size: 13px;
+        padding: 9px 11px;
+    }
+
+    .ai-input-actions {
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .ai-next-btn,
+    .ai-cancel-btn {
+        min-height: 38px;
+        padding: 0 16px;
+        border-radius: 12px;
+        font-size: 13px;
+    }
+
+    html.vi-light-mode .ai-field input,
+    html.vi-light-mode .ai-field select,
+    html.vi-light-mode .ai-field textarea {
+        color: #2c2926 !important;
+        -webkit-text-fill-color: #2c2926 !important;
+    }
+
+    html.vi-light-mode .ai-field input::placeholder,
+    html.vi-light-mode .ai-field textarea::placeholder {
+        color: #8f877f !important;
+        -webkit-text-fill-color: #8f877f !important;
+    }
+}

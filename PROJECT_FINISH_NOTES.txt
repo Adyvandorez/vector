@@ -1,0 +1,56 @@
+VECTOR INVOICE - FINISH NOTES
+=============================
+
+Konsep AI Assistant
+-------------------
+- AI tetap offline / gratis / rule-based.
+- Tidak memakai OpenAI, API key, atau layanan berbayar.
+- Intent dibaca dari pola kata, sinonim, dan logika controller lokal.
+
+Perbaikan production/hardening
+------------------------------
+1. File sensitif di root dihapus:
+   - reset_password.php
+   - file SQL lama di public root
+2. SQL bersih dipindahkan ke:
+   - database/vector_invoice_finish.sql
+3. CSRF diaktifkan dan semua form/AJAX POST sudah diberi token.
+4. Encryption key sudah diisi.
+5. Default environment index.php diubah ke production.
+6. db_debug otomatis mati saat production.
+7. Semua aksi delete utama diubah dari GET link menjadi POST form.
+8. Delete desain diganti menjadi nonaktif/soft delete agar histori order tidak rusak.
+9. Create/edit order memakai database transaction.
+10. Delete order sekarang ikut membersihkan file preview/final secara fisik.
+11. Kode order/invoice dibuat urut harian agar lebih profesional.
+12. Status LUNAS tidak lagi otomatis untuk total 0.
+13. Remember-me token disimpan sebagai hash di database.
+14. Login diberi limit percobaan sederhana berbasis session.
+15. Output AI di frontend di-escape untuk mengurangi risiko XSS.
+16. AI overlay dipisah ke partial view agar layout footer lebih rapi.
+17. Folder upload diberi .htaccess untuk memblokir eksekusi PHP.
+
+SQL default
+-----------
+File import database:
+- database/vector_invoice_finish.sql
+
+Login awal setelah import database bersih:
+- Username: muhammadadimulyono@gmail.com
+- Password: (ganti setelah import / lihat data admin di database)
+
+Penting:
+- Segera ganti password admin setelah login pertama.
+- Jika ingin melihat error saat development lokal, set CI_ENV=development.
+- Backup database lama sebelum import SQL karena file SQL memakai DROP TABLE IF EXISTS.
+
+
+UPDATE DATA RESTORED:
+- SQL project sudah diganti kembali memakai data asli dari vector_invoice.sql.
+- File SQL ada di database/vector_invoice_finish.sql dan database/vector_invoice_data_restored.sql.
+- Jangan upload file SQL ke public root atau GitHub publik karena berisi data client/order asli.
+
+
+LOGIN ADMIN TERBARU:
+Username: muhammadadimulyono@gmail.com
+Password: (ganti setelah import / lihat data admin di database)

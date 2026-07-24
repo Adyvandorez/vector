@@ -1,0 +1,15 @@
+Penyebab HTTP ERROR 500:
+- Database lama memiliki nilai deadline 0000-00-00.
+- MySQL mode ketat menolak query DATE/NULLIF terhadap nilai tersebut.
+
+Yang sudah diperbaiki di ZIP ini:
+1. application/controllers/Dashboard.php
+   Query tanggal dashboard dibuat aman terhadap deadline 0000-00-00/kosong.
+2. application/models/Order_model.php
+   Urutan Orders tetap berdasarkan deadline terbaru, tetapi 0000-00-00 dianggap kosong.
+3. database/patch_deadline_0000_hotfix.sql
+   Patch opsional untuk membersihkan database lama.
+
+Cara pakai:
+- Replace folder project dengan ZIP ini.
+- Kalau database lama masih error, jalankan file database/patch_deadline_0000_hotfix.sql di phpMyAdmin.

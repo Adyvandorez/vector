@@ -1,0 +1,780 @@
+/* =========================================================
+   VECTOR INVOICE — UI POLISH & STABILIZATION
+   Tujuan: merapikan tampilan tanpa mengganti identitas desain.
+========================================================= */
+
+:root {
+    --radius-lg: 18px;
+    --radius-md: 14px;
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, .28);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, .22);
+}
+
+.card {
+    border-radius: var(--radius-lg);
+}
+
+.card-header {
+    min-width: 0;
+}
+
+.card-header > *,
+.topbar > *,
+.actions > * {
+    min-width: 0;
+}
+
+.btn,
+.badge,
+.input,
+select,
+textarea {
+    transition: border-color .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease, filter .18s ease;
+}
+
+.btn {
+    min-height: 42px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.input:focus,
+select:focus,
+textarea:focus,
+.btn:focus-visible,
+.sb__item:focus-visible,
+.theme-mode-toggle:focus-visible,
+.sb__logout:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(202, 162, 74, .14);
+}
+
+.badge {
+    line-height: 1.15;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.u-badge-danger,
+.badge.u-badge-danger {
+    color: #ff4355;
+    border-color: rgba(255, 67, 85, .42);
+    background: rgba(180, 0, 18, .14);
+}
+
+.vi-title-stack {
+    min-width: 0;
+}
+
+.vi-storage-note {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(202, 162, 74, .22);
+    background: rgba(202, 162, 74, .06);
+    color: rgba(242, 242, 242, .76);
+    line-height: 1.2;
+}
+
+.vi-master-file {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    max-width: 100%;
+}
+
+.vi-master-name {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.status-badge.is-inactive {
+    color: #ff4b5d;
+    border-color: rgba(255, 75, 93, .36);
+    background: rgba(180, 0, 18, .13);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.table td b,
+.table td .small {
+    overflow-wrap: anywhere;
+}
+
+.actions {
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.u-inline-form,
+.u-icon-form,
+.u-form-inline-zero {
+    margin: 0;
+}
+
+/* Sidebar polish */
+.sidebar.sb {
+    z-index: 1200;
+}
+
+.sb__item,
+.sb__logout,
+.theme-mode-toggle {
+    will-change: transform;
+}
+
+.sb__controls {
+    flex: 0 0 auto;
+}
+
+.sb__aiMenu {
+    cursor: pointer;
+}
+
+/* Order mobile uses its own classes, no longer borrowing price matrix naming. */
+.om-action {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b0b0b;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.om-action svg {
+    width: 18px;
+    height: 18px;
+}
+
+.om-edit {
+    color: var(--gold);
+    box-shadow: inset 0 0 0 1px rgba(202, 162, 74, .38), 0 0 8px rgba(202, 162, 74, .12);
+}
+
+.om-delete {
+    color: #ff2e2e;
+    box-shadow: inset 0 0 0 1px rgba(255, 46, 46, .38), 0 0 8px rgba(255, 46, 46, .12);
+}
+
+.om-status.belum-lunas,
+.om-status.belum-bayar,
+.om-status.unpaid,
+.om-status.pending {
+    color: #ff4b5d;
+    border-color: rgba(255, 75, 93, .36);
+    background: rgba(180, 0, 18, .16);
+}
+
+.om-status.lunas,
+.om-status.paid,
+.om-status.selesai {
+    color: #45d483;
+    border-color: rgba(69, 212, 131, .30);
+    background: rgba(69, 212, 131, .10);
+}
+
+/* Forms: slightly cleaner spacing */
+label.badge {
+    margin-bottom: 6px;
+}
+
+/* =========================================================
+   LIGHT MODE POLISH — subtle depth, same beige character.
+========================================================= */
+html.vi-light-mode {
+    --shadow-soft: 0 18px 45px rgba(112, 94, 73, .10);
+    --shadow-card: 0 10px 30px rgba(112, 94, 73, .08);
+}
+
+html.vi-light-mode body,
+html.vi-light-mode .container.app {
+    background: #fbfaf8 !important;
+}
+
+html.vi-light-mode .card,
+html.vi-light-mode .dash-panel,
+html.vi-light-mode .latest-orders,
+html.vi-light-mode .quick-actions,
+html.vi-light-mode .paper {
+    background: #fffdf9 !important;
+    border-color: #d8ccbf !important;
+    box-shadow: var(--shadow-card) !important;
+}
+
+html.vi-light-mode .stat-card,
+html.vi-light-mode .trend-box,
+html.vi-light-mode .qa-card,
+html.vi-light-mode .order-info-card,
+html.vi-light-mode .order-mini-card,
+html.vi-light-mode .preview-card,
+html.vi-light-mode .revision-card,
+html.vi-light-mode .drive-stat-card,
+html.vi-light-mode .drive-action-card,
+html.vi-light-mode .drive-guide-card,
+html.vi-light-mode .drive-security-card,
+html.vi-light-mode .drive-errors-card,
+html.vi-light-mode .drive-guide-item,
+html.vi-light-mode .drive-stage-card,
+html.vi-light-mode .om-card,
+html.vi-light-mode .dm-card,
+html.vi-light-mode .pm-card,
+html.vi-light-mode .dlm-card {
+    background: #f4efe9 !important;
+    border-color: #d4c7ba !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .card-header,
+html.vi-light-mode hr.sep {
+    border-color: #d8ccbf !important;
+}
+
+html.vi-light-mode .stat-value,
+html.vi-light-mode .dlm-code,
+html.vi-light-mode .dlm-total {
+    color: #2b2927 !important;
+}
+
+html.vi-light-mode .stat-value.danger,
+html.vi-light-mode .om-value.unpaid,
+html.vi-light-mode .u-danger {
+    color: #ee1427 !important;
+}
+
+html.vi-light-mode .stat-kicker,
+html.vi-light-mode .vi-storage-note {
+    background: #fff8ea !important;
+    border-color: #ecc16d !important;
+    color: #d79624 !important;
+}
+
+html.vi-light-mode .stat-trend.is-up {
+    color: #1f9f5c !important;
+    background: rgba(31, 159, 92, .10) !important;
+    border-color: rgba(31, 159, 92, .24) !important;
+}
+
+html.vi-light-mode .stat-trend.is-down,
+html.vi-light-mode .stat-mini-icon.danger {
+    color: #ee1427 !important;
+    background: rgba(238, 20, 39, .08) !important;
+    border-color: rgba(238, 20, 39, .25) !important;
+}
+
+html.vi-light-mode .stat-mini-icon,
+html.vi-light-mode .stat-trend.is-flat {
+    color: #d79624 !important;
+    background: #fff8ea !important;
+    border-color: #ecc16d !important;
+}
+
+html.vi-light-mode .theme-mode-toggle,
+html.vi-light-mode .sb__logout,
+html.vi-light-mode .sb__brand,
+html.vi-light-mode .sb__user {
+    border-color: #cdbfaf !important;
+}
+
+html.vi-light-mode .sb__controls .theme-mode-toggle,
+html.vi-light-mode .sb__controls .sb__logout {
+    background: #fffdf9 !important;
+    border-color: #cdbfaf !important;
+}
+
+html.vi-light-mode .btn:hover,
+html.vi-light-mode .dm-btn:hover,
+html.vi-light-mode .pm-action:hover,
+html.vi-light-mode .om-action:hover {
+    filter: brightness(.985);
+    border-color: #d79624 !important;
+}
+
+html.vi-light-mode .om-action {
+    background: #fffdf9 !important;
+    border-color: #e0c48d !important;
+}
+
+html.vi-light-mode .om-edit {
+    color: #d79624 !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .om-delete {
+    color: #ee1427 !important;
+    border-color: rgba(238, 20, 39, .42) !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode .status-badge.is-inactive,
+html.vi-light-mode .om-status.belum-lunas,
+html.vi-light-mode .om-status.belum-bayar,
+html.vi-light-mode .om-status.unpaid,
+html.vi-light-mode .om-status.pending {
+    color: #ee1427 !important;
+    background: rgba(238, 20, 39, .08) !important;
+    border-color: rgba(238, 20, 39, .30) !important;
+}
+
+html.vi-light-mode .om-status.lunas,
+html.vi-light-mode .om-status.paid,
+html.vi-light-mode .om-status.selesai {
+    color: #1f9f5c !important;
+    background: rgba(31, 159, 92, .10) !important;
+    border-color: rgba(31, 159, 92, .24) !important;
+}
+
+/* =========================================================
+   MOBILE STABILITY
+========================================================= */
+@media (max-width: 767px) {
+    .container.app {
+        padding: 8px 8px 88px !important;
+    }
+
+    .container.app > .card {
+        padding-top: 92px !important;
+        min-height: calc(100vh - 16px);
+    }
+
+    .container.app > .card > .card-header:first-child {
+        position: fixed !important;
+        top: 8px !important;
+        left: 8px !important;
+        right: 8px !important;
+        min-height: 76px !important;
+        height: auto !important;
+        padding: 14px 14px 14px 72px !important;
+        border-radius: 18px !important;
+        z-index: 1100 !important;
+        overflow: visible !important;
+    }
+
+    .sb-toggle {
+        top: 25px !important;
+        left: 20px !important;
+        z-index: 1120 !important;
+    }
+
+    body.sb-open .container.app > .card > .card-header:first-child {
+        pointer-events: none;
+    }
+
+    .topbar {
+        min-width: 0;
+    }
+
+    .mobile-search-compact:hover,
+    .mobile-search-compact:focus,
+    .mobile-search-compact:not(:placeholder-shown) {
+        min-width: 0 !important;
+    }
+
+    .actions {
+        gap: 8px;
+    }
+
+    .btn {
+        min-height: 42px;
+    }
+
+    .vi-master-name {
+        max-width: 100%;
+    }
+
+    .vi-storage-note {
+        font-size: 11px;
+    }
+
+    html.vi-light-mode .container.app > .card > .card-header:first-child {
+        background: rgba(255, 253, 249, .96) !important;
+        box-shadow: 0 12px 28px rgba(112, 94, 73, .12) !important;
+    }
+}
+
+/* =========================================================
+   REVISION 20260619 — storage label as plain text
+   Local Thumb/Drive status di Jenis Desain & Harga Matrix
+   tidak lagi berbentuk kapsul; hanya teks kecil biasa.
+========================================================= */
+.vi-storage-note,
+html.vi-light-mode .vi-storage-note {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-top: 5px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+}
+
+.vi-storage-note {
+    color: rgba(242, 242, 242, .62) !important;
+}
+
+html.vi-light-mode .vi-storage-note {
+    color: #8a8178 !important;
+}
+
+/* =========================================================
+   REVISION 20260619 — softer AI guide cards in light mode
+========================================================= */
+html.vi-light-mode #aiCard.info-mode .ai-info-section,
+html.vi-light-mode .ai-info-section {
+    background: #f7f3ee !important;
+    border-color: #e2d6cb !important;
+    box-shadow: none !important;
+}
+
+html.vi-light-mode #aiCard.info-mode .ai-info-section:hover,
+html.vi-light-mode .ai-info-section:hover {
+    background: #fbf8f3 !important;
+}
+
+/* =========================================================
+   FINAL MOBILE OVERRIDE 20260619 REV2
+   File ini diload paling akhir, jadi menjaga layout/search/delete konsisten.
+========================================================= */
+@media (max-width: 767px) {
+    .pm-card .vi-storage-note,
+    .dm-card .vi-storage-note,
+    .dm-card .vi-master-file--mobile {
+        display: none !important;
+    }
+
+    .om-delete,
+    .pm-delete,
+    .dm-delete,
+    html.vi-light-mode .om-delete,
+    html.vi-light-mode .pm-delete,
+    html.vi-light-mode .dm-delete,
+    html.vi-light-mode .om-delete:hover,
+    html.vi-light-mode .pm-delete:hover,
+    html.vi-light-mode .dm-delete:hover {
+        color: #ff2e2e !important;
+        border: 1px solid rgba(255, 46, 46, .58) !important;
+        box-shadow: none !important;
+    }
+
+    .om-delete,
+    .pm-delete,
+    .dm-delete {
+        background: #0b0b0b !important;
+    }
+
+    html.vi-light-mode .om-delete,
+    html.vi-light-mode .pm-delete,
+    html.vi-light-mode .dm-delete {
+        background: #fffdf9 !important;
+    }
+
+    .mobile-search-compact:placeholder-shown:not(:focus),
+    html.vi-light-mode .mobile-search-compact:placeholder-shown:not(:focus) {
+        width: 48px !important;
+        max-width: 48px !important;
+        min-width: 48px !important;
+        flex: 0 0 48px !important;
+        color: transparent !important;
+        caret-color: transparent !important;
+        font-size: 0 !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: 22px 22px !important;
+    }
+
+    .mobile-search-compact:focus,
+    .mobile-search-compact:not(:placeholder-shown),
+    html.vi-light-mode .mobile-search-compact:focus,
+    html.vi-light-mode .mobile-search-compact:not(:placeholder-shown) {
+        font-size: 16px !important;
+        background-repeat: no-repeat !important;
+        background-position: 16px center !important;
+    }
+}
+
+/* =========================================================
+   CENTERED CONFIRM MODAL 20260620 REV6
+   Dark/light confirm yang konsisten untuk seluruh web.
+========================================================= */
+.vi-confirm {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.vi-confirm.is-open {
+    display: flex;
+}
+
+.vi-confirm__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .72);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.vi-confirm__box {
+    position: relative;
+    width: min(470px, calc(100vw - 32px));
+    border-radius: 28px;
+    padding: 24px 24px 22px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid rgba(255, 170, 82, .40);
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 153, 0, .14), transparent 42%),
+        linear-gradient(180deg, rgba(34, 21, 12, .98), rgba(12, 10, 10, .98));
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .56);
+    transform: translateY(12px) scale(.97);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+.vi-confirm.is-open .vi-confirm__box {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.vi-confirm__iconWrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.vi-confirm__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1;
+    color: #ffb347;
+    border: 1px solid rgba(255, 179, 71, .58);
+    background: rgba(255, 179, 71, .10);
+    box-shadow: 0 0 16px rgba(255, 179, 71, .22);
+}
+
+.vi-confirm__iconSymbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-1px);
+}
+
+.vi-confirm__content h2 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    line-height: 1.25;
+    color: #ffb347;
+}
+
+.vi-confirm__content p {
+    margin: 0;
+    color: rgba(255, 244, 228, .92);
+    line-height: 1.68;
+    font-size: 14px;
+}
+
+.vi-confirm__actions {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.vi-confirm__cancel,
+.vi-confirm__ok {
+    min-width: 104px;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 850;
+    font-size: 14px;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.vi-confirm__cancel:hover,
+.vi-confirm__ok:hover {
+    transform: translateY(-1px);
+}
+
+.vi-confirm__cancel {
+    color: #f4f0ea;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.06);
+}
+
+.vi-confirm__ok {
+    color: #fff;
+    border: 1px solid rgba(255, 53, 75, .78);
+    background: linear-gradient(180deg, #ff2745, #e50520);
+    box-shadow: 0 8px 18px rgba(229, 5, 32, .25);
+}
+
+.vi-confirm--warning .vi-confirm__box {
+    border-color: rgba(255, 170, 82, .40);
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 153, 0, .14), transparent 42%),
+        linear-gradient(180deg, rgba(34, 21, 12, .98), rgba(12, 10, 10, .98));
+}
+
+.vi-confirm--warning .vi-confirm__icon,
+.vi-confirm--warning .vi-confirm__content h2 {
+    color: #ffb347;
+}
+
+.vi-confirm--warning .vi-confirm__icon {
+    border-color: rgba(255, 179, 71, .58);
+    background: rgba(255, 179, 71, .10);
+    box-shadow: 0 0 16px rgba(255, 179, 71, .22);
+}
+
+.vi-confirm--danger .vi-confirm__box {
+    border-color: rgba(255, 54, 78, .48);
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 54, 78, .12), transparent 42%),
+        linear-gradient(180deg, rgba(59, 8, 16, .97), rgba(22, 7, 11, .98));
+}
+
+.vi-confirm--danger .vi-confirm__icon,
+.vi-confirm--danger .vi-confirm__content h2 {
+    color: #ff4258;
+}
+
+.vi-confirm--danger .vi-confirm__icon {
+    border-color: rgba(255, 66, 88, .56);
+    background: rgba(255, 66, 88, .12);
+    box-shadow: 0 0 16px rgba(255, 66, 88, .24);
+}
+
+html.vi-light-mode .vi-confirm__backdrop {
+    background: rgba(72, 59, 44, .20);
+}
+
+html.vi-light-mode .vi-confirm__box {
+    color: #2b2927;
+    box-shadow: 0 28px 76px rgba(112, 94, 73, .18);
+}
+
+html.vi-light-mode .vi-confirm--warning .vi-confirm__box {
+    border-color: #f0b565;
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 183, 84, .18), transparent 42%),
+        linear-gradient(180deg, #fbf7f2, #f5efea);
+}
+
+html.vi-light-mode .vi-confirm--warning .vi-confirm__icon,
+html.vi-light-mode .vi-confirm--warning .vi-confirm__content h2 {
+    color: #f0a43d;
+}
+
+html.vi-light-mode .vi-confirm--warning .vi-confirm__icon {
+    border-color: rgba(240, 164, 61, .46);
+    background: rgba(240, 164, 61, .10);
+    box-shadow: 0 0 16px rgba(240, 164, 61, .16);
+}
+
+html.vi-light-mode .vi-confirm--danger .vi-confirm__box {
+    border-color: rgba(255, 69, 94, .42);
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 69, 94, .10), transparent 42%),
+        linear-gradient(180deg, #fcf6f7, #f5ecee);
+}
+
+html.vi-light-mode .vi-confirm--danger .vi-confirm__icon,
+html.vi-light-mode .vi-confirm--danger .vi-confirm__content h2 {
+    color: #f21534;
+}
+
+html.vi-light-mode .vi-confirm--danger .vi-confirm__icon {
+    border-color: rgba(242, 21, 52, .34);
+    background: rgba(242, 21, 52, .08);
+    box-shadow: 0 0 16px rgba(242, 21, 52, .12);
+}
+
+html.vi-light-mode .vi-confirm__content p {
+    color: #5f5750;
+}
+
+html.vi-light-mode .vi-confirm__cancel {
+    color: #4a423b;
+    background: #fffdf9;
+    border-color: #d6c5b1;
+}
+
+@media (max-width: 767px) {
+    .vi-confirm {
+        padding: 18px;
+    }
+
+    .vi-confirm__box {
+        width: min(420px, calc(100vw - 24px));
+        border-radius: 24px;
+        padding: 22px 18px 18px;
+    }
+
+    .vi-confirm__content h2 {
+        font-size: 18px;
+    }
+
+    .vi-confirm__content p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .vi-confirm__actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .vi-confirm__cancel,
+    .vi-confirm__ok {
+        min-width: 0;
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,24 @@
+GOOGLE DRIVE STORAGE - VECTOR INVOICE
+
+Folder ID:
+1AozTUK0O1E6IRL6iUrP8veHtDjkUGK-l
+
+Credential service account ditempatkan di:
+application/config/google/service-account.json
+
+Catatan keamanan:
+- Jangan upload service-account.json ke GitHub/public hosting yang folder application-nya bisa dibaca langsung.
+- Folder application/ dan application/config/google/ sudah diberi .htaccess deny.
+- Di Google Drive, cukup share folder utama ke email service account sebagai Editor.
+- Untuk akses umum folder, lebih aman ubah dari Editor menjadi Viewer atau Restricted. File preview akan dibuat public reader otomatis oleh sistem.
+
+Cara pakai:
+1. Import database final: database/vector_invoice_drive_final.sql
+   atau jika database lama sudah ada, jalankan: database/vector_invoice_drive_patch.sql
+2. Login ke web.
+3. Buka menu Drive Storage.
+4. Klik Migrasikan Preview Lama ke Drive beberapa kali sampai pending = 0.
+5. Upload preview baru di Jenis Desain atau Order akan otomatis dikompres dan dikirim ke Google Drive.
+
+Fallback:
+Jika internet/API/cURL/OpenSSL bermasalah, upload tetap disimpan lokal. Error detail akan masuk application/logs.

@@ -1,0 +1,271 @@
+/* =========================================================
+   DASHBOARD MOBILE — STABILIZED
+========================================================= */
+
+@media (max-width: 767px) {
+    .dashboard-page > .card-header {
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .dashboard-page .dash-title {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .dashboard-page .dash-title h1 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.05;
+    }
+
+    .dashboard-page .dash-title .small {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .dashboard-page .dash-actions {
+        width: auto;
+        margin-top: 0;
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .dashboard-page .dash-actions .dash-date-badge {
+        display: none;
+    }
+
+    .dashboard-page .dash-actions .btn {
+        min-height: 48px;
+        padding: 0 14px;
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 850;
+    }
+
+    .dash-top {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+    }
+
+    .dash-panel {
+        padding: 14px;
+        overflow: hidden;
+    }
+
+    .profile-head {
+        gap: 12px;
+        align-items: center;
+    }
+
+    .logo-box {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+    }
+
+    .logo-box img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    .stat-card {
+        min-height: 118px;
+        padding: 14px;
+        gap: 8px;
+    }
+
+    .stat-card-head {
+        align-items: flex-start;
+    }
+
+    .stat-value.money {
+        font-size: 22px;
+    }
+
+    .stat-value.big {
+        font-size: 27px;
+    }
+
+    .stat-trend,
+    .stat-mini-icon {
+        min-height: 28px;
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .stat-mini-icon {
+        width: 28px;
+        padding: 0;
+    }
+
+    .trend-box {
+        padding: 10px;
+    }
+
+    .trend-plot {
+        height: 180px;
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .trend-labels {
+        gap: 6px;
+    }
+
+    .dash-bottom {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .quick-actions {
+        order: 1;
+        padding: 14px;
+    }
+
+    .latest-orders {
+        order: 2;
+        padding: 14px;
+        overflow: hidden;
+    }
+
+    .qa-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .qa-card {
+        padding: 12px;
+        min-width: 0;
+    }
+
+    .qa-title {
+        font-size: 13px;
+        line-height: 1.25;
+    }
+
+    .latest-orders .u-flex-between {
+        gap: 10px;
+        align-items: center;
+    }
+
+    .latest-orders .btn {
+        min-height: 38px;
+        padding: 0 12px;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    .dashboard-latest-table {
+        display: none !important;
+    }
+
+    .dashboard-latest-mobile {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .dlm-card {
+        padding: 14px;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, .32);
+        border: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px 12px;
+        align-items: start;
+    }
+
+    .dlm-code {
+        color: #fff;
+        font-weight: 950;
+        line-height: 1.25;
+        word-break: break-word;
+    }
+
+    .dlm-title {
+        margin-top: 4px;
+        line-height: 1.3;
+    }
+
+    .dlm-status {
+        justify-self: end;
+        white-space: nowrap;
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .dlm-meta {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 12px;
+        align-items: center;
+    }
+
+    .dlm-client {
+        min-width: 0;
+        word-break: break-word;
+        font-weight: 800;
+    }
+
+    .dlm-total {
+        color: #fff;
+        font-weight: 950;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 360px) {
+    .qa-grid { grid-template-columns: 1fr; }
+
+    .dashboard-page .dash-actions .btn {
+        min-height: 44px;
+        padding: 0 11px;
+        font-size: 12px;
+    }
+}
+
+/* Layout dashboard mobile mengikuti struktur baru: main, grafik, belum lunas, lalu section bawah. */
+@media (max-width: 767px) {
+    .dashboard-page .dash-side {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+    }
+
+    .dashboard-page .dash-unpaid-panel {
+        padding: 14px !important;
+    }
+
+    .dashboard-page .unpaid-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .dashboard-page .unpaid-grid .stat-card {
+        min-height: 118px !important;
+        padding: 14px !important;
+    }
+
+    .dashboard-page .dash-bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+        margin-top: 14px !important;
+    }
+}

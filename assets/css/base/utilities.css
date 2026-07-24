@@ -1,0 +1,261 @@
+/* =========================================================
+   UI UTILITIES
+   ---------------------------------------------------------
+   File ini berisi class kecil pengganti inline-style yang
+   sering dipakai di view. Tujuannya agar file PHP tetap rapi
+   dan styling lebih mudah dicari/diubah.
+========================================================= */
+
+/* Spacing */
+.u-mt-4 { margin-top: 4px; }
+.u-mt-6 { margin-top: 6px; }
+.u-mt-8 { margin-top: 8px; }
+.u-mt-10 { margin-top: 10px; }
+.u-mt-12 { margin-top: 12px; }
+.u-mt-14 { margin-top: 14px; }
+.u-mt-16 { margin-top: 16px; }
+.u-mt-20 { margin-top: 20px; }
+.u-mb-6 { margin-bottom: 6px; }
+.u-mb-10 { margin-bottom: 10px; }
+.u-mb-12 { margin-bottom: 12px; }
+.u-m-0 { margin: 0; }
+
+/* Layout helpers */
+.u-w-full { width: 100%; }
+.u-flex-1 { flex: 1; }
+.u-min-w-0 { min-width: 0; }
+.u-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.u-flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+.u-flex-column-gap-10 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.u-grid-span-2 { grid-column: span 2; }
+
+/* Card padding helpers */
+.u-card-pad-8 { padding: 8px; }
+.u-card-pad-10 { padding: 10px; }
+.u-card-pad-12 { padding: 12px; }
+.u-card-pad-14 { padding: 14px; }
+.u-card-pad-16 { padding: 16px; }
+
+/* Table width helpers */
+.u-actions-col-220 { width: 220px; }
+.u-actions-col-260 { width: 260px; }
+.u-thumb-cell { width: 90px; }
+.u-spacer-260 { width: 260px; }
+
+/* Text */
+.u-bold { font-weight: 900; }
+.u-title-sm {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: .2px;
+}
+.u-value-lg {
+    font-size: 22px;
+    font-weight: 900;
+    margin-top: 6px;
+}
+.u-danger { color: #ff5252; }
+.u-muted-70 { opacity: .7; }
+.u-muted-80 { opacity: .8; }
+.u-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Badges */
+.u-badge-danger {
+    border-color: #ff5252;
+    color: #ff5252;
+}
+
+/* Image helpers */
+.u-thumb-58 {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+.u-thumb-58-bordered {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #1c1c1c;
+    display: block;
+}
+.u-thumb-120 {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #1c1c1c;
+}
+
+/* Form helpers */
+.u-clickable { cursor: pointer; }
+.u-form-inline-zero { margin: 0; }
+.u-form-top { margin-top: 10px; }
+
+/* AI simple page */
+.ai-route-content { padding: 24px; }
+.ai-route-card {
+    background: #fff;
+    color: #111;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+}
+.ai-route-title { margin-top: 0; }
+
+/* POST action form helpers
+   Dipakai untuk mengganti link hapus GET menjadi form POST tanpa mengubah visual tombol. */
+.u-inline-form {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+.u-inline-form button {
+    font: inherit;
+}
+.u-icon-form {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+.u-icon-form button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* =========================================================
+   Design/Price list refinements
+========================================================= */
+.vi-title-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+.vi-storage-note {
+    display: block;
+    color: var(--muted);
+    line-height: 1.25;
+}
+.vi-master-file {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 120px;
+    text-align: center;
+}
+.vi-master-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    line-height: 1;
+    white-space: nowrap;
+}
+.vi-master-name {
+    max-width: 150px;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.vi-master-file--mobile {
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+}
+.vi-file-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Date input calendar icon: keep dark style, make indicator visible in gold. */
+input[type="date"] {
+    color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 1;
+    filter: invert(68%) sepia(42%) saturate(727%) hue-rotate(4deg) brightness(91%) contrast(90%);
+}
+
+/* =========================================================
+   Auto-dismiss flash notifications
+   ---------------------------------------------------------
+   Dipakai untuk pesan sukses/error hasil submit/migrasi.
+   Warna tetap mengikuti .badge/.alert/.err/.ok bawaan.
+========================================================= */
+.flash-toast,
+.js-flash-toast {
+    transform-origin: top left;
+    will-change: opacity, transform, max-height, margin, padding;
+    transition:
+        opacity .55s ease,
+        transform .55s ease,
+        max-height .55s ease,
+        margin .55s ease,
+        padding .55s ease,
+        border-width .55s ease;
+    max-height: 140px;
+    overflow: hidden;
+}
+.flash-toast--show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.flash-toast--hide {
+    opacity: 0 !important;
+    transform: translateY(-8px) scale(.98);
+    max-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-width: 0 !important;
+    pointer-events: none;
+}
+
+/* Detail order: tiga card atas dibuat seimbang mengikuti card Ringkasan Pembayaran. */
+.order-detail-top-cards {
+    align-items: stretch;
+}
+.order-detail-top-cards > .order-info-card {
+    height: 100%;
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+}
+.order-detail-top-cards > .order-info-card:nth-child(2) {
+    min-height: 172px;
+}
+.order-detail-top-cards > .order-info-card:first-child,
+.order-detail-top-cards > .order-info-card:last-child {
+    justify-content: flex-start;
+}
+@media (max-width: 767px) {
+    .order-detail-top-cards > .order-info-card,
+    .order-detail-top-cards > .order-info-card:nth-child(2) {
+        min-height: unset;
+    }
+}

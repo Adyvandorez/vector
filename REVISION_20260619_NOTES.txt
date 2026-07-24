@@ -1,0 +1,40 @@
+VECTOR INVOICE - REVISION 20260619
+
+Revisi yang diterapkan:
+1. Dashboard
+   - History Order Terbaru dikurangi dari 5 order menjadi 4 order.
+   - Label teks di dashboard ikut disesuaikan menjadi "4 order valid terbaru berdasarkan deadline/tanggal input".
+   - Tujuan: panel History lebih pendek dan Quick Actions tidak terlihat menyisakan ruang kosong besar.
+
+2. Jenis Desain
+   - Label storage seperti "Local Thumb" tidak lagi berbentuk kapsul/badge.
+   - Label dibuat menjadi teks kecil biasa agar tampilan lebih bersih.
+
+3. Harga Matrix
+   - Label storage seperti "Local Thumb" juga dibuat menjadi teks kecil biasa.
+
+4. Panduan Google Drive Storage
+   - Layout card panduan dirapikan.
+   - Tahap 1/2/3 dibuat lebih compact.
+   - Langkah Pemakaian, Penjelasan Tombol, dan Catatan Keamanan dibuat lebih seimbang.
+   - Warna, dark style, border, dan karakter desain tetap dipertahankan.
+
+5. AI Assistant Light Mode
+   - Card abu-abu pada bagian Monitoring & Data Bisnis dibuat lebih muda/soft.
+   - Aksen oranye dan desain utama tetap dipertahankan.
+
+6. Login Light Mode
+   - Area form login light mode diubah mengikuti referensi user.
+   - Background form dibuat putih bersih.
+   - Input dan tombol mengikuti style rounded beige/tan.
+   - Avatar/foto di sebelah kanan tidak disentuh.
+
+7. Login Dark Mode
+   - Background putih bawaan browser/autofill pada input dihilangkan.
+   - Background input tetap menyatu dengan dark mode.
+   - Border emas tetap dipertahankan.
+
+Catatan:
+- Tidak ada perubahan struktur database.
+- Tidak ada perubahan desain besar/warna utama aplikasi.
+- Perubahan fokus pada layout, spacing, dan polish sesuai revisi kecil yang sudah dicatat.

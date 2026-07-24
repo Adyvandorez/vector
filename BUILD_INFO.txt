@@ -1,0 +1,13 @@
+VECTOR INVOICE WEB + ANDROID API - BUILD 2.3.0 STITCH EDITION
+Tanggal build: 20 Juli 2026
+
+Cakupan build:
+- Web admin CodeIgniter 3 dan REST API Android lama tetap dipertahankan.
+- Menu OWNER "Konten Aplikasi" untuk mengatur identitas, banner, promosi, portofolio, dan biaya aplikasi.
+- Endpoint publik GET /api/home-content.
+- Tabel mobile_banners, mobile_promotions, mobile_portfolios, dan public app settings.
+- Asset awal banner, promosi, dan enam portofolio.
+- SQL produksi versi 2.3.0.
+
+Pemeriksaan akhir dilakukan terhadap sintaks PHP, target route, XML Android,
+referensi View Binding, asset resource, serta struktur file output.

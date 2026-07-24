@@ -1,0 +1,23 @@
+REVISION 20260619 - Confirm Modal, Custom Lists, Order Mobile, Date Picker
+
+1. Konfirmasi aksi
+- Browser confirm bawaan diganti modal custom di tengah halaman.
+- Berlaku untuk form/link dengan data-confirm, termasuk hapus, logout, disconnect Drive, migrasi/sinkron Drive, dan aksi sejenis.
+- Hapus preview order juga memakai modal custom yang sama.
+
+2. Kolom list/select
+- Select mobile dibuat custom agar panah dan daftar pilihan rapi seperti Edit Harga.
+- Diterapkan ke Edit/Tambah Harga dan Tambah/Edit Order, termasuk item desain dinamis.
+
+3. Orders mobile
+- Order yang belum lunas menampilkan Sisa Tagihan di bagian paling bawah card.
+
+4. Detail Order mobile
+- Tabel Item Desain diubah menjadi card mobile agar tidak berantakan dan tidak melebar.
+
+5. Tanggal mobile
+- Input tanggal order/payment memakai date picker custom mobile agar popup tidak berantakan.
+
+Catatan:
+- Warna/desain utama tetap dipertahankan.
+- Layout dark mode dan light mode tetap mengikuti style masing-masing.

@@ -1,0 +1,15 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+class Payment_model extends CI_Model
+{
+    public function confirmations($status=null){$this->db->select('pc.*,o.order_code,o.title,o.total,o.paid,c.name client_name,c.phone client_phone,pm.name payment_method_name,pm.account_number')->from('payment_confirmations pc')->join('orders o','o.id=pc.order_id')->join('clients c','c.id=pc.client_id')->join('payment_methods pm','pm.id=pc.payment_method_id');if($status)$this->db->where('pc.status',$status);return $this->db->order_by('pc.id','DESC')->get()->result();}
+    public function find_confirmation($id){return $this->db->get_where('payment_confirmations',['id'=>(int)$id])->row();}
+    public function methods($active=null){if($active!==null)$this->db->where('is_active',(int)$active);return $this->db->order_by('sort_order','ASC')->get('payment_methods')->result();}
+    public function method($id){return $this->db->get_where('payment_methods',['id'=>(int)$id])->row();}
+    public function save_method($id,array $data){if($id)return $this->db->where('id',(int)$id)->update('payment_methods',$data);$this->db->insert('payment_methods',$data);return $this->db->insert_id();}
+    public function approve($id,$adminId,$note=''){
+        $row=$this->find_confirmation($id);if(!$row||$row->status!=='PENDING')return false;$order=$this->db->get_where('orders',['id'=>(int)$row->order_id])->row();if(!$order)return false;$amount=min((int)$row->amount,max(0,(int)$order->total-(int)$order->paid));if($amount<=0)return false;
+        $this->load->model('Order_model','orders');$this->db->trans_start();$this->orders->add_payment($order->id,$amount,'Verifikasi bukti pembayaran #'.$row->id,date('Y-m-d'),'ANDROID_CONFIRMATION');$paymentRow=$this->db->where('order_id',(int)$order->id)->where('source','ANDROID_CONFIRMATION')->order_by('id','DESC')->limit(1)->get('order_payments')->row();$paymentId=$paymentRow?(int)$paymentRow->id:null;$this->db->where('id',(int)$id)->update('payment_confirmations',['status'=>'APPROVED','admin_note'=>$note?:null,'reviewed_by'=>(int)$adminId,'reviewed_at'=>date('Y-m-d H:i:s'),'order_payment_id'=>$paymentId]);$this->db->insert('client_notifications',['client_id'=>(int)$row->client_id,'order_id'=>(int)$row->order_id,'type'=>'PAYMENT','title'=>'Pembayaran diterima','message'=>'Pembayaran sebesar Rp '.number_format($amount,0,',','.').' telah diverifikasi.','created_at'=>date('Y-m-d H:i:s')]);$this->db->trans_complete();return $this->db->trans_status();
+    }
+    public function reject($id,$adminId,$note){$row=$this->find_confirmation($id);if(!$row||$row->status!=='PENDING')return false;$this->db->where('id',(int)$id)->update('payment_confirmations',['status'=>'REJECTED','admin_note'=>$note,'reviewed_by'=>(int)$adminId,'reviewed_at'=>date('Y-m-d H:i:s')]);$this->db->insert('client_notifications',['client_id'=>(int)$row->client_id,'order_id'=>(int)$row->order_id,'type'=>'PAYMENT','title'=>'Bukti pembayaran ditolak','message'=>$note?:'Bukti pembayaran belum dapat diverifikasi.','created_at'=>date('Y-m-d H:i:s')]);return true;}
+}

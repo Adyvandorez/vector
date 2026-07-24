@@ -1,0 +1,17 @@
+HOTFIX HTTP ERROR 500 - LOCALHOST
+
+Perbaikan di versi ini:
+1. Baris `Options -Indexes` di root .htaccess dihapus karena pada beberapa Apache/XAMPP bisa menyebabkan HTTP ERROR 500.
+2. Default database dikembalikan seperti project awal:
+   host: localhost
+   port: 3308
+   username: root
+   password: root
+   database: vector_invoice
+3. Kalau MySQL kamu memakai XAMPP standar, ubah application/config/database.php menjadi:
+   port: 3308
+   password: ''
+
+Login admin:
+username/email: muhammadadimulyono@gmail.com
+password: (ganti setelah import / lihat data admin di database)

@@ -1,0 +1,46 @@
+CSS STRUCTURE REV3 - Vector Invoice
+
+Folder assets/css sudah dipisah agar lebih mudah dirawat:
+
+1. assets/css/themes/
+   - theme-dark.css
+   - theme-light.css
+   - theme.css
+   Berisi warna/mode dan variable tampilan utama.
+
+2. assets/css/mobile/
+   - mobile.css
+   - dashboard-mobile.css
+   - designs-mobile.css
+   - drive-storage-mobile.css
+   - orders-mobile.css
+   - prices-mobile.css
+   - ai-mobile.css
+   Berisi seluruh styling khusus responsive/mobile.
+
+3. assets/css/pages/
+   - dashboard.css
+   - drive-storage.css
+   - login.css
+   - forget.css
+   - auth-polish.css
+   - orders-form.css
+   - orders-view.css
+   - invoice-print.css
+   Berisi styling khusus halaman.
+
+4. assets/css/components/
+   - sidebar.css
+   - ai.css
+   - ai-input-mode.css
+   - ui-polish.css
+   Berisi styling komponen global.
+
+5. assets/css/base/
+   - utilities.css
+   Berisi helper class kecil/utility.
+
+Perubahan tambahan REV3:
+- Login mobile light mode dirapikan supaya tidak bertumpuk: avatar, nama, brand, card, form, dan admin account mengikuti struktur mobile dark mode.
+- Drive Storage mobile: badge Mode OAuth 2.0 dibuat sejajar kanan dengan judul Aksi Google Drive.
+- Cache CSS/JS dinaikkan ke v=20260619rev3.

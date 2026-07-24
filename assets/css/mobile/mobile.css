@@ -1,0 +1,781 @@
+/* =========================================================
+   GLOBAL MOBILE CSS
+   ---------------------------------------------------------
+   File ini hanya berisi aturan mobile yang dipakai semua
+   halaman. CSS mobile per halaman dipisah agar mudah dibaca:
+   - dashboard-mobile.css
+   - orders-mobile.css
+   - designs-mobile.css
+   - prices-mobile.css
+   - drive-storage-mobile.css
+   - ai-mobile.css
+========================================================= */
+
+@media (min-width: 768px) {
+    .mobile-only { display: none !important; }
+}
+
+@media (max-width: 767px) {
+    .desktop-only { display: none !important; }
+
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        min-height: 100vh;
+        background: radial-gradient(ellipse at top, #1b1207 0%, var(--bg) 55%, #050505 100%);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .container.app {
+        margin-left: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        padding: 8px 8px 88px !important;
+    }
+
+    .container.app > .card {
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+    }
+
+    .card {
+        border-radius: 18px;
+    }
+
+    /* =====================================================
+       MOBILE APP HEADER
+       Header halaman dibuat sticky dan hamburger ditempel
+       secara visual di area header agar tidak berdiri sendiri.
+    ====================================================== */
+    .container.app > .card > .card-header:first-child {
+        position: sticky !important;
+        top: 0;
+        z-index: 1050;
+        min-height: 66px;
+        padding: 14px 14px 14px 64px !important;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        background:
+            radial-gradient(circle at 18% 0%, rgba(202, 162, 74, .10), transparent 42%),
+            linear-gradient(180deg, rgba(17, 17, 17, .96), rgba(11, 11, 11, .94));
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, .22);
+    }
+
+    .container.app > .card > .card-header:first-child h1,
+    .dash-title h1 {
+        font-size: 18px;
+        line-height: 1.12;
+        margin: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .container.app > .card > .card-header:first-child .small {
+        line-height: 1.3;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .topbar {
+        width: 100%;
+        min-width: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .topbar .search {
+        min-width: 0;
+    }
+
+    .u-spacer-260,
+    .topbar > div[style*="width:260px"] {
+        display: none !important;
+    }
+
+    .btn {
+        min-height: 42px;
+        border-radius: 13px;
+        justify-content: center;
+    }
+
+    .input,
+    select,
+    textarea {
+        font-size: 16px;
+        min-height: 44px;
+        border-radius: 14px;
+    }
+
+    .row,
+    .row3 {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    hr.sep {
+        margin: 16px 0;
+    }
+
+    .small {
+        line-height: 1.45;
+    }
+
+    .actions {
+        flex-wrap: wrap;
+    }
+
+    .flash-toast,
+    .badge.flash-toast {
+        max-width: calc(100vw - 32px);
+        line-height: 1.35;
+    }
+
+    /* Sidebar mobile */
+    .sb-toggle {
+        position: fixed !important;
+        top: 17px;
+        left: 17px;
+        z-index: 1060;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        border-radius: 13px;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        background: rgba(17, 17, 17, .82);
+        border: 1.5px solid var(--gold);
+        color: var(--gold);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, .30);
+        transition: background .18s ease, color .18s ease, opacity .18s ease, transform .18s ease;
+    }
+
+    .sb-toggle svg {
+        width: 19px;
+        height: 19px;
+        stroke-width: 1.9;
+    }
+
+    .sb-toggle:hover,
+    .sb-toggle:focus-visible,
+    .sb-toggle:active {
+        background: var(--gold);
+        color: #000;
+        box-shadow: 0 8px 24px rgba(255, 193, 61, .35);
+    }
+
+    body.sb-open .sb-toggle,
+    .sidebar.sb.open ~ .container.app .sb-toggle {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(.92);
+    }
+
+    .sidebar.sb {
+        position: fixed !important;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: min(var(--sidebar-w), 86vw);
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        z-index: 1450 !important;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    body.sb-open .sidebar.sb,
+    .sidebar.sb.open {
+        transform: translateX(0);
+    }
+
+    .sb-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .58);
+        z-index: 1400 !important;
+        display: none;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+
+    body.sb-open .sb-overlay,
+    .sb-overlay.show {
+        display: block;
+    }
+
+    body.sb-open {
+        overflow: hidden;
+    }
+
+    /* Search compact mobile: default ikon, melebar saat fokus/hover/berisi teks. */
+    .mobile-search-compact {
+        width: 44px !important;
+        max-width: 44px;
+        height: 42px;
+        flex: 0 0 44px !important;
+        padding: 0 0 0 42px !important;
+        color: transparent !important;
+        caret-color: transparent;
+        border-radius: 14px;
+        cursor: pointer;
+        background-color: #0d0d0d;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 21px 21px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23caa24a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'%3E%3C/circle%3E%3Cpath d='m20 20-3.5-3.5'%3E%3C/path%3E%3C/svg%3E");
+        transition: max-width .24s ease, width .24s ease, color .16s ease, padding .24s ease, background-position .24s ease;
+    }
+
+    .mobile-search-compact::placeholder {
+        color: transparent;
+    }
+
+    .mobile-search-compact:hover,
+    .mobile-search-compact:focus,
+    .mobile-search-compact:not(:placeholder-shown) {
+        width: 100% !important;
+        max-width: 100%;
+        padding: 0 14px 0 44px !important;
+        color: #fff !important;
+        caret-color: var(--gold);
+        background-position: 14px center;
+        cursor: text;
+    }
+
+    .mobile-search-compact:hover::placeholder,
+    .mobile-search-compact:focus::placeholder {
+        color: rgba(255, 255, 255, .46);
+    }
+
+    /* Form umum */
+    .card-body label.badge {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .card-body button[type="submit"] {
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mobile-back-btn {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   MOBILE HEADER FINAL FIX
+   ---------------------------------------------------------
+   Header mobile dibuat seperti bar aplikasi: hamburger menyatu
+   secara visual di area header, header tetap fixed saat konten
+   di-scroll, dan konten diberi ruang agar tidak tertutup.
+========================================================= */
+@media (max-width: 767px) {
+    .container.app {
+        padding-top: 8px !important;
+    }
+
+    .container.app > .card {
+        padding-top: 86px;
+        min-height: calc(100vh - 16px);
+    }
+
+    .container.app > .card > .card-header:first-child {
+        position: fixed !important;
+        top: 8px !important;
+        left: 8px !important;
+        right: 8px !important;
+        width: auto !important;
+        min-height: 76px !important;
+        height: auto;
+        margin: 0 !important;
+        padding: 14px 14px 14px 72px !important;
+        z-index: 1100 !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow: visible;
+        border-radius: 0;
+        background:
+            radial-gradient(circle at 18% 0%, rgba(202, 162, 74, .10), transparent 42%),
+            linear-gradient(180deg, rgba(17, 17, 17, .98), rgba(11, 11, 11, .96));
+        border: 1px solid rgba(255, 255, 255, .06);
+        border-bottom-color: rgba(255, 255, 255, .10);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, .36);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .container.app > .card > .card-header:first-child > * {
+        min-width: 0;
+    }
+
+    .card-body {
+        padding-top: 16px;
+    }
+
+    .sb-toggle {
+        position: fixed !important;
+        top: 25px !important;
+        left: 20px !important;
+        z-index: 1120 !important;
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 14px !important;
+        background: rgba(17, 17, 17, .88) !important;
+        border: 1.5px solid var(--gold) !important;
+        color: var(--gold) !important;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .30);
+    }
+
+    .sb-toggle svg {
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    body.sb-open .sb-toggle {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: scale(.92) !important;
+    }
+
+    .mobile-back-btn,
+    .drive-guide-page > .card-header > a.btn,
+    .drive-header-actions .btn:not(.drive-help-btn) {
+        display: none !important;
+    }
+
+    /* Search compact final: default ikon kecil, melebar saat focus/hover/berisi teks. */
+    .mobile-search-compact {
+        width: 48px !important;
+        max-width: 48px !important;
+        min-width: 48px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        flex: 0 0 48px !important;
+        padding: 0 0 0 48px !important;
+        border-radius: 16px !important;
+        color: transparent !important;
+        caret-color: transparent !important;
+        background-position: center !important;
+        background-size: 23px 23px !important;
+        overflow: hidden;
+    }
+
+    .mobile-search-compact::placeholder {
+        color: transparent !important;
+    }
+
+    .mobile-search-compact:hover,
+    .mobile-search-compact:focus,
+    .mobile-search-compact:not(:placeholder-shown) {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        padding: 0 14px 0 48px !important;
+        color: #fff !important;
+        caret-color: var(--gold) !important;
+        background-position: 16px center !important;
+    }
+
+    .mobile-search-compact:hover::placeholder,
+    .mobile-search-compact:focus::placeholder {
+        color: rgba(255, 255, 255, .46) !important;
+    }
+}
+
+/* =========================================================
+   MOBILE HEADER SEARCH FIX 20260619 REV2
+   Mencegah icon search dobel/berulang terutama di light mode.
+========================================================= */
+@media (max-width: 767px) {
+    .mobile-search-compact {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: 22px 22px !important;
+    }
+
+    .mobile-search-compact::-webkit-search-decoration,
+    .mobile-search-compact::-webkit-search-cancel-button,
+    .mobile-search-compact::-webkit-search-results-button,
+    .mobile-search-compact::-webkit-search-results-decoration {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+
+    .mobile-search-compact:placeholder-shown:not(:focus) {
+        color: transparent !important;
+        caret-color: transparent !important;
+        font-size: 0 !important;
+        padding-left: 48px !important;
+        background-position: center !important;
+    }
+
+    .mobile-search-compact:focus,
+    .mobile-search-compact:not(:placeholder-shown) {
+        font-size: 16px !important;
+        background-repeat: no-repeat !important;
+        background-position: 16px center !important;
+    }
+
+    html.vi-light-mode .mobile-search-compact:placeholder-shown:not(:focus) {
+        color: transparent !important;
+        caret-color: transparent !important;
+        font-size: 0 !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+}
+
+/* =========================================================
+   MOBILE SCROLL HEADER MASK 20260619 REV4
+   Menutup area belakang header fixed supaya card/elemen yang
+   sedang di-scroll tidak terlihat tembus di posisi paling atas.
+========================================================= */
+@media (max-width: 767px) {
+    .container.app::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 98px;
+        z-index: 1095;
+        pointer-events: none;
+        background:
+            radial-gradient(circle at 18% 0%, rgba(202, 162, 74, .10), transparent 42%),
+            linear-gradient(180deg, rgba(7, 7, 7, 1) 0%, rgba(8, 8, 8, .98) 72%, rgba(8, 8, 8, 0) 100%);
+    }
+
+    html.vi-light-mode .container.app::before {
+        background:
+            radial-gradient(circle at 18% 0%, rgba(203, 178, 150, .18), transparent 42%),
+            linear-gradient(180deg, rgba(251, 250, 248, 1) 0%, rgba(251, 250, 248, .98) 72%, rgba(251, 250, 248, 0) 100%);
+    }
+
+    .container.app > .card > .card-header:first-child {
+        overflow: hidden !important;
+    }
+}
+
+/* =========================================================
+   GLOBAL CUSTOM SELECT + DATEPICKER MOBILE 20260619 REV5
+   Semua kolom list memakai tampilan dropdown yang sama seperti
+   Edit Harga: panah rapi, list tidak melebar, dan scroll halus.
+========================================================= */
+@media (max-width: 767px) {
+    select.vi-custom-select {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        left: 16px !important;
+        top: 16px !important;
+    }
+
+    .vi-select-wrap {
+        position: relative;
+        width: 100%;
+        isolation: isolate;
+    }
+
+    .vi-select-btn {
+        width: 100%;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 0 42px 0 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(202, 162, 74, .36);
+        background: rgba(0, 0, 0, .28);
+        color: #fff;
+        font: inherit;
+        font-size: 16px;
+        font-weight: 800;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .025);
+    }
+
+    .vi-select-text {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .vi-select-arrow {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, .82);
+        pointer-events: none;
+    }
+
+    .vi-select-arrow svg { width: 16px; height: 16px; }
+
+    .vi-select-list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 8px);
+        z-index: 2100;
+        max-height: min(310px, 56vh);
+        overflow: auto;
+        padding: 8px;
+        border-radius: 18px;
+        border: 1px solid rgba(202, 162, 74, .30);
+        background: #080808;
+        box-shadow: 0 20px 46px rgba(0, 0, 0, .56);
+        display: none;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .vi-select-wrap.is-open { z-index: 2200; }
+    .vi-select-wrap.is-open .vi-select-list { display: grid; gap: 4px; }
+    .vi-select-wrap.is-open .vi-select-btn {
+        border-color: rgba(246, 211, 124, .72);
+        box-shadow: 0 0 0 3px rgba(202, 162, 74, .14), inset 0 0 0 1px rgba(255, 255, 255, .035);
+    }
+
+    .vi-select-option {
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 12px;
+        background: transparent;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 750;
+        line-height: 1.25;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .vi-select-option:hover,
+    .vi-select-option:focus-visible,
+    .vi-select-option.is-selected {
+        outline: none;
+        background: rgba(202, 162, 74, .14);
+        color: #f6d37c;
+    }
+
+    html.vi-light-mode .vi-select-btn {
+        background: #f5f2ee;
+        border-color: #d3c7bc;
+        color: #2b2927;
+        box-shadow: none;
+    }
+
+    html.vi-light-mode .vi-select-arrow { color: #5b554f; }
+    html.vi-light-mode .vi-select-list {
+        background: #fffdf9;
+        border-color: #d4c8bd;
+        box-shadow: 0 18px 40px rgba(112, 94, 73, .18);
+    }
+    html.vi-light-mode .vi-select-option { color: #2b2927; }
+    html.vi-light-mode .vi-select-option:hover,
+    html.vi-light-mode .vi-select-option:focus-visible,
+    html.vi-light-mode .vi-select-option.is-selected {
+        background: rgba(203, 178, 150, .22);
+        color: #9a6210;
+    }
+
+    .vi-date-input {
+        cursor: pointer;
+        background-repeat: no-repeat !important;
+        background-position: right 16px center !important;
+        background-size: 18px 18px !important;
+        padding-right: 46px !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23caa24a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4M3 10h18'/%3E%3C/svg%3E") !important;
+    }
+
+    .vi-date-picker {
+        position: fixed;
+        inset: 0;
+        z-index: 4800;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+    }
+
+    .vi-date-picker.is-open { display: flex; }
+
+    .vi-date-picker__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,.58);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .vi-date-picker__panel {
+        position: relative;
+        width: min(340px, calc(100vw - 28px));
+        padding: 16px;
+        border-radius: 22px;
+        border: 1px solid rgba(202, 162, 74, .30);
+        background: #0a0a0a;
+        box-shadow: 0 24px 64px rgba(0,0,0,.58);
+        color: #fff;
+    }
+
+    .vi-date-picker__top,
+    .vi-date-picker__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .vi-date-picker__month,
+    .vi-date-picker__nav button,
+    .vi-date-picker__actions button,
+    .vi-date-picker__date {
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .vi-date-picker__month {
+        color: #fff;
+        font-size: 17px;
+        font-weight: 900;
+        padding: 4px 0;
+    }
+
+    .vi-date-picker__nav { display: flex; gap: 8px; }
+    .vi-date-picker__nav button {
+        width: 36px;
+        height: 36px;
+        border-radius: 13px;
+        border: 1px solid rgba(202, 162, 74, .28);
+        color: var(--gold);
+        font-size: 26px;
+        line-height: 1;
+    }
+
+    .vi-date-picker__days,
+    .vi-date-picker__grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .vi-date-picker__days {
+        margin-top: 14px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 850;
+        text-align: center;
+    }
+
+    .vi-date-picker__grid { margin-top: 8px; }
+
+    .vi-date-picker__date {
+        height: 38px;
+        border-radius: 13px;
+        color: #fff;
+        font-weight: 800;
+    }
+
+    .vi-date-picker__date.is-muted { color: rgba(255,255,255,.32); }
+    .vi-date-picker__date.is-today { box-shadow: inset 0 0 0 1px rgba(202, 162, 74, .42); }
+    .vi-date-picker__date.is-selected {
+        background: var(--gold);
+        color: #000;
+        box-shadow: 0 10px 22px rgba(202, 162, 74, .22);
+    }
+
+    .vi-date-picker__actions { margin-top: 14px; }
+    .vi-date-picker__actions button {
+        min-height: 38px;
+        padding: 0 12px;
+        border-radius: 12px;
+        color: var(--gold);
+        font-weight: 850;
+    }
+
+    html.vi-light-mode .vi-date-picker__backdrop { background: rgba(58, 48, 39, .22); }
+    html.vi-light-mode .vi-date-picker__panel {
+        background: #fffdf9;
+        border-color: #d4c8bd;
+        color: #2b2927;
+        box-shadow: 0 22px 58px rgba(112, 94, 73, .20);
+    }
+    html.vi-light-mode .vi-date-picker__month { color: #2b2927; }
+    html.vi-light-mode .vi-date-picker__date { color: #2b2927; }
+    html.vi-light-mode .vi-date-picker__date.is-muted { color: rgba(43, 41, 39, .32); }
+}
+
+@media (min-width: 768px) {
+    .vi-select-wrap > select.vi-custom-select {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    .vi-select-btn,
+    .vi-select-list { display: none !important; }
+}
+
+/* =========================================================
+   MOBILE LIGHT — Brand card sidebar Ady_vandorez sesuai referensi.
+   Hanya aktif saat mode terang di layar mobile.
+========================================================= */
+@media (max-width: 767px) {
+    html.vi-light-mode .sidebar.sb .sb__brand {
+        background: linear-gradient(135deg, #f7f4ef 0%, #eee7de 100%) !important;
+        border-color: #a8947d !important;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82) !important;
+    }
+
+    html.vi-light-mode .sidebar.sb .sb__logo {
+        background: #b8aa98 !important;
+        border-color: #504b46 !important;
+        box-shadow: none !important;
+    }
+
+    html.vi-light-mode .sidebar.sb .sb__brandName {
+        color: #3b393a !important;
+    }
+
+    html.vi-light-mode .sidebar.sb .sb__brandSub {
+        color: #4d4947 !important;
+    }
+}
