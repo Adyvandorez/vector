@@ -1,9 +1,10 @@
 {
-    "description": "CodeIgniter 3 Project",
+    "description": "The CodeIgniter framework",
     "name": "codeigniter/framework",
     "type": "project",
+    "homepage": "https://codeigniter.com",
     "license": "MIT",
     "require": {
-        "php": "8.2.*"
+        "ext-mysqli": "*"
     }
 }
